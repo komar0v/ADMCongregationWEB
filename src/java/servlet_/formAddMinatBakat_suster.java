@@ -84,7 +84,7 @@ public class formAddMinatBakat_suster extends HttpServlet {
                         + "\n"
                         + "\n"
                         + "                    <div class=\"text-center\">\n"
-                        + "                        <img src=\"getImagefromDB?id_suster="+datanya.getId_Suster()+"\"  height=\"200\" width=\"200\" >\n"
+                        + "                        <img src=\"getImagefromDB?id_suster=" + datanya.getId_Suster() + "\"  height=\"200\" width=\"200\" >\n"
                         + "\n"
                         + "                    </div><br>\n"
                         + "\n"
@@ -94,8 +94,9 @@ public class formAddMinatBakat_suster extends HttpServlet {
                         + "                </div><!--/col-3-->\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li ><a href=\"./editSusterView_?id_suster="+datanya.getId_Suster()+"\">Informasi Dasar</a></li>\n"
-                        + "						<li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Minat Bakat</a></li>\n"
+                        + "                        <li ><a href=\"./editSusterView_?id_suster=" + datanya.getId_Suster() + "\">Informasi Dasar</a></li>\n"
+                        + "			   <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Minat Bakat</a></li>"
+                        + "                        <li><a href=\"./formAddRiwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
@@ -106,11 +107,11 @@ public class formAddMinatBakat_suster extends HttpServlet {
                         + "                                    \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n"
-                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\""+datanya.getId_Suster()+"\">\n"
+                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
                         + "                                </div>\n"
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
-                        + "                        <div>\n"
+                        + "                       <hr><h4>Minat & Bakat</h4> <div>\n"
                         + "                            <input type=\"text\" name=\"minatbakat[]\" value=\"\" size=\"30\"/>\n"
                         + "                            <a href=\"javascript:void(0);\" class=\"add_button\" title=\"Add field\"><img src=\"https://img.icons8.com/pastel-glyph/64/000000/plus.png\" width=\"25\" height=\"25\"></a>\n"
                         + "                        </div>\n"
@@ -171,7 +172,7 @@ public class formAddMinatBakat_suster extends HttpServlet {
                 out.close();
             }
         } catch (Exception ex) {
-            Logger.getLogger(editSusterView_.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(formAddMinatBakat_suster.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
