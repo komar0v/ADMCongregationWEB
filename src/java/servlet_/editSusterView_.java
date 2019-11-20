@@ -125,7 +125,7 @@ public class editSusterView_ extends HttpServlet {
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
                         + "                            <hr>\n"
-                        + "                            <form class=\"form\" action=\"##\" method=\"post\" id=\"registrationForm\" enctype=\"multipart/form-data\">\n"
+                        + "                            <form class=\"form\" action=\"./editSusterLakukanPerubahan_\" method=\"POST\" id=\"registrationForm\" enctype=\"multipart/form-data\">\n"
                         + "                                    "
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
