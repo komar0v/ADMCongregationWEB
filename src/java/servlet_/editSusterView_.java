@@ -81,11 +81,12 @@ public class editSusterView_ extends HttpServlet {
                 datanya.setTempat_lahir_suster(rs.getString("tempat_lahir_suster"));
                 datanya.setTanggal_lahir_suster(rs.getString("tanggal_lahir_suster"));
             }
+            
             try {
                 out.println("<!DOCTYPE html>\n"
                         + "<html>\n"
                         + "    <head>\n"
-                        + "        <title>Profil Pengguna</title>\n"
+                        + "        <title>Edit Data</title>\n"
                         + "        <meta charset=\"utf-8\">\n"
                         + "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
                         + "        <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">\n"
@@ -118,7 +119,8 @@ public class editSusterView_ extends HttpServlet {
                         + "                </div><!--/col-3-->\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#home\">Informasi Dasar</a></li>\n"
+                        + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Informasi Dasar</a></li>"
+                                + "                <li ><a href=\"./formAddMinatBakat_suster?id_suster="+datanya.getId_Suster()+"\">Minat Bakat</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"

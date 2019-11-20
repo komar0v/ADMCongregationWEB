@@ -109,12 +109,20 @@ public class editSusterLakukanPerubahan_ extends HttpServlet {
             prpStmt.executeUpdate();
             prpStmt.close();
             con.close();
+            try {
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Data  "+suster.getNama_suster()+"  Berhasil Diedit!');");
+                out.println("location='./showSuster_';");
+                out.println("</script>");
+
+            } finally {
+                out.close();
+            }
             
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("./showSuster");
         
     }
 
