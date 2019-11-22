@@ -24,8 +24,8 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "minatBakat_suster", urlPatterns = {"/minatBakat_suster"})
-public class minatBakat_suster extends HttpServlet {
+@WebServlet(name = "formAddMinatBakat_suster", urlPatterns = {"/formAddMinatBakat_suster"})
+public class formAddMinatBakat_suster extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -47,34 +47,18 @@ public class minatBakat_suster extends HttpServlet {
             Connection conn = koneksi_db.initializeDatabase();
 
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
-            PreparedStatement ps2= conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
 
             String idnyaSuster = request.getParameter("id_suster");
             ps.setString(1, idnyaSuster);
-            ps2.setString(1, idnyaSuster);
 
             ResultSet rs = ps.executeQuery();
-            ResultSet rs2 = ps2.executeQuery();
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
 
             }
-            String minatBakat="";
-            if(rs2.next()){
-                minatBakat=rs2.getString("minatbakat");
-            }
-             String arrMinatBakat[] = minatBakat.split(",");
-            for (int i = 1; i < arrMinatBakat.length; i++) {
-                if(arrMinatBakat.length<1){
-                    System.out.println("KOSONG");
-                }
-                else{
-                    System.out.println(arrMinatBakat[i]);
-                }
-            }
-
             try {
-                out.println("<!DOCTYPE html>\n"
+                out.println("\n"
+                        + "<!DOCTYPE html>\n"
                         + "<html>\n"
                         + "    <head>\n"
                         + "        <title>Edit Data</title>\n"
@@ -100,7 +84,7 @@ public class minatBakat_suster extends HttpServlet {
                         + "\n"
                         + "\n"
                         + "                    <div class=\"text-center\">\n"
-                        + "                        <img src=\"getImagefromDB?id_suster=" + datanya.getId_Suster() + "\"  height=\"200\" width=\"200\" >\n"
+                        + "                        <img src=\"getImagefromDB?id_suster="+datanya.getId_Suster()+"\"  height=\"200\" width=\"200\" >\n"
                         + "\n"
                         + "                    </div><br>\n"
                         + "\n"
@@ -110,38 +94,33 @@ public class minatBakat_suster extends HttpServlet {
                         + "                </div><!--/col-3-->\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li ><a href=\"./editSusterView_?id_suster=" + datanya.getId_Suster() + "\">Informasi Dasar</a></li>\n"
-                        + "			   <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Minat Bakat</a></li>"
-                        + "                        <li><a href=\"./formAddRiwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
+                        + "			   <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Tambah Minat & Bakat</a></li>                      \n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
                         + "                            <hr>\n"
-                        + "                            <form class=\"form\" method=\"GET\" id=\"registrationForm\">\n"
+                        + "                            <form class=\"form\" action=\"./tambahMinatBakat_\" method=\"POST\" id=\"registrationForm\">\n"
                         + "                                    \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n"
-                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
+                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\""+datanya.getId_Suster()+"\">\n"
                         + "                                </div>\n"
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
-                        + "                       <hr><h4>Minat & Bakat</h4> <div id=\"minat_bakat\">\n");
-               for (int i = 1; i < arrMinatBakat.length; i++) {
-                    out.println("<br><li>" + arrMinatBakat[i] + "</li><br>");
-                }
-                
-                
-                out.println("                     </div>\n"
+                        + "                       <hr><h4>Tambah Minat & Bakat</h4> <div id=\"minat_bakat\">\n"
+                        + "                            <input type=\"text\" name=\"minatbakat[]\" value=\"\" size=\"30\"/>\n"
+                        + "                            <a href=\"javascript:void(0);\" class=\"add_button\" title=\"Add field\"><img src=\"https://img.icons8.com/pastel-glyph/64/000000/plus.png\" width=\"25\" height=\"25\"></a>\n"
+                        + "                        </div>\n"
                         + "                    </div>\n"
                         + "\n"
                         + "                                \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <div class=\"col-xs-12\">\n"
                         + "                                        <br>\n"
-                        + "                                        <button class=\"button icon solid\" formaction=\"./formAddMinatBakat_suster?id_suster="+datanya.getId_Suster()+"\"><i class=\"glyphicon glyphicon-plus\"></i>TAMBAH MINAT BAKAT</button>\n"
-                        + "                                        <button class=\"button icon solid\" formaction=\"./#\" type=\"reset\"><i class=\"glyphicon glyphicon-edit\"></i> EDIT MINAT BAKAT</button>\n"
+                        + "                                        <button class=\"button primary icon solid fa-save\" type=\"submit\">SIMPAN</button>\n"
+                        + "                                        <button class=\"button icon solid\" type=\"reset\"><i class=\"glyphicon glyphicon-repeat\"></i> Reset</button>\n"
                         + "                                    </div>\n"
                         + "                                </div>\n"
                         + "                            </form>\n"
@@ -187,13 +166,13 @@ public class minatBakat_suster extends HttpServlet {
                         + "\n"
                         + "</html>\n"
                         + "");
+
             } finally {
                 out.close();
             }
         } catch (Exception ex) {
             Logger.getLogger(minatBakat_suster.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     /**

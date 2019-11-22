@@ -25,42 +25,42 @@
 
 
                     <div class="text-center">
-                        <img src="getImagefromDB?id_suster=1837439201948382"  height="200" width="200" >
+                        <img src="getImagefromDB?id_suster="  height="200" width="200" >
 
                     </div><br>
+
+
+
 
                 </div><!--/col-3-->
                 <div class="col-sm-9">
                     <ul class="nav nav-tabs">
-                        <li><a href="./editSusterView_">Informasi Dasar</a></li>
-                        <li><a href="./formAddMinatBakat_suster">Minat Bakat</a></li>
-                        <li class="active" ><a data-toggle="tab" href="#">Riwayat Pendidikan</a></li>
+			   <li class="active"><a data-toggle="tab" href="#">Tambah Minat & Bakat</a></li>                      
                     </ul>
 
 
                     <div class="tab-content">
                         <div class="tab-pane active" id="home">
                             <hr>
-                            <form class="form" action="#" method="POST" id="registrationForm">
-
+                            <form class="form" action="./tambahMinatBakat_" method="POST" id="registrationForm">
+                                    
                                 <div class="form-group">
-                                    <h4>NIK Suster</h4>
-                                    <input type="text"  class="form-control" name="idSuster" readonly value="1837439201948382">
+                                   <h4>NIK Suster</h4>
+										<input type="text"  class="form-control" name="idSuster" readonly value="25468312025468221">
                                 </div>
+								
+								<div class="field_wrapper">
+                       <hr><h4>Tambah Minat & Bakat</h4> <div id="minat_bakat">
+                            <input type="text" name="minatbakat[]" value="" size="30"/>
+                            <a href="javascript:void(0);" class="add_button" title="Add field"><img src="https://img.icons8.com/pastel-glyph/64/000000/plus.png" width="25" height="25"></a>
+                        </div>
+                    </div>
 
-                                <div class="field_wrapper">
-                                    <div>
-                                        <input type="text" name="riwayatPendidikan1[]" value="" size="10"/>
-                                        <input type="text" name="riwayatPendidikan2[]" value="" size="30"/>
-                                        <a href="javascript:void(0);" class="add_button" title="Add field"><img src="https://img.icons8.com/pastel-glyph/64/000000/plus.png" width="25" height="25"></a>
-                                    </div>
-                                </div>
-
-
+                                
                                 <div class="form-group">
                                     <div class="col-xs-12">
                                         <br>
-                                        <button class="button primary icon solid fa-save" type="submit">SIMPAN PERUBAHAN</button>
+                                        <button class="button primary icon solid fa-save" type="submit">SIMPAN</button>
                                         <button class="button icon solid" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                                     </div>
                                 </div>
@@ -78,32 +78,31 @@
                 $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
             });
         </script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var maxField = 10; //Input fields increment limitation
-                var addButton = $('.add_button'); //Add button selector
-                var wrapper = $('.field_wrapper'); 
-                var fieldHTML = '<div><input type="text" name="riwayatPendidikan1[]" value="" size="10"/> <input type="text" name="riwayatPendidikan2[]" value="" size="30"/><a href="javascript:void(0);" class="remove_button"><img src="https://img.icons8.com/pastel-glyph/64/000000/minus.png" width="25" height="25"></a></div>';
-                var x = 1; //Initial field counter is 1
+		<script type="text/javascript">
+                $(document).ready(function () {
+                    var maxField = 10; //Input fields increment limitation
+                    var addButton = $('.add_button'); //Add button selector
+                    var wrapper = $('.field_wrapper'); //Input field wrapper <img src="https://img.icons8.com/flat_round/64/000000/minus.png">
+                    var fieldHTML = '<div><input type="text" name="minatbakat[]" value="" size="30"/><a href="javascript:void(0);" class="remove_button"><img src="https://img.icons8.com/pastel-glyph/64/000000/minus.png" width="25" height="25"></a></div>'; //New input field html 
+                    var x = 1; //Initial field counter is 1
 
-                //Once add button is clicked
-                $(addButton).click(function () {
-                    //Check maximum number of input fields
-                    if (x < maxField) {
-                        x++; //Increment field counter
-                        $(wrapper).append(fieldHTML); //Add field html
-                    }
-                });
+                    //Once add button is clicked
+                    $(addButton).click(function () {
+                        //Check maximum number of input fields
+                        if (x < maxField) {
+                            x++; //Increment field counter
+                            $(wrapper).append(fieldHTML); //Add field html
+                        }
+                    });
 
-                //Once remove button is clicked
-                $(wrapper).on('click', '.remove_button', function (e) {
-                    e.preventDefault();
-                    $(this).parent('div').remove(); //Remove field html
-                    x--; //Decrement field counter
+                    //Once remove button is clicked
+                    $(wrapper).on('click', '.remove_button', function (e) {
+                        e.preventDefault();
+                        $(this).parent('div').remove(); //Remove field html
+                        x--; //Decrement field counter
+                    });
                 });
-            });
-        </script>
+            </script>
     </body>
 
 </html>
-
