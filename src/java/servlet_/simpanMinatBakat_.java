@@ -7,12 +7,16 @@ package servlet_;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import kelasJava.koneksi_db;
+import kelasJava.minatBakat_suster;
 
 /**
  *
@@ -56,9 +60,24 @@ public class simpanMinatBakat_ extends HttpServlet {
         for (int i = 0; i < minatBakat.length; i++) {
             list_minatBakat = list_minatBakat+" | "+minatBakat[i];
         }
-        System.out.println(list_minatBakat);
+        minatBakat_suster minat_bakatnyaSuster = new minatBakat_suster();
+        minat_bakatnyaSuster.setId_suster(idSuster);
+        minat_bakatnyaSuster.setMinatBakat(list_minatBakat);
         
-        
+        try {
+            Connection con = koneksi_db.initializeDatabase();
+            PreparedStatement prpStmt = con.prepareStatement("INSERT INTO minatbakat_suster values(?,?)");
+            prpStmt.setString(1, minat_bakatnyaSuster.getId_suster());
+            prpStmt.setString(2, minat_bakatnyaSuster.getMinatBakat());
+
+            prpStmt.executeUpdate();
+            prpStmt.close();
+            con.close();
+            
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
         
        
