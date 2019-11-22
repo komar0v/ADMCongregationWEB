@@ -78,6 +78,7 @@ public class simpanMinatBakat_ extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("./editSusterView_?id_suster?"+minat_bakatnyaSuster.getId_suster());
         
         
        
