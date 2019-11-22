@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +23,8 @@ import kelasJava.minatBakat_suster;
  *
  * @author ASUS
  */
-@WebServlet(name = "simpanMinatBakat_", urlPatterns = {"/simpanMinatBakat_"})
-public class simpanMinatBakat_ extends HttpServlet {
+@WebServlet(name = "simpanMinatBakat_", urlPatterns = {"/tambahMinatBakat_"})
+public class tambahMinatBakat_ extends HttpServlet {
 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -58,12 +59,22 @@ public class simpanMinatBakat_ extends HttpServlet {
         
         try {
             Connection con = koneksi_db.initializeDatabase();
-            PreparedStatement prpStmt = con.prepareStatement("INSERT INTO minatbakat_suster values(?,?)");
+            PreparedStatement prpStmt = con.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
             prpStmt.setString(1, minat_bakatnyaSuster.getId_suster());
-            prpStmt.setString(2, minat_bakatnyaSuster.getMinatBakat());
-
-            prpStmt.executeUpdate();
-            prpStmt.close();
+            
+            ResultSet rs = prpStmt.executeQuery();
+            String minat_bakat = "";
+            if (rs.next()) {
+                minat_bakat = rs.getString("minatbakat");
+            }
+            System.out.println(minat_bakat);
+            
+//            PreparedStatement prpStmt2 = con.prepareStatement("UPDATE minatbakat=? WHERE id_suster=?");
+//            prpStmt2.setString(1, minat_bakatnyaSuster.getId_suster());
+//            prpStmt2.setString(2, minat_bakatnyaSuster.getMinatBakat());
+//
+//            prpStmt2.executeUpdate();
+//            prpStmt2.close();
             con.close();
             
 

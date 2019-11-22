@@ -84,7 +84,7 @@ public class formAddRiwayatPendidikan_suster extends HttpServlet {
                 + "                <div class=\"col-sm-9\">\n"
                 + "                    <ul class=\"nav nav-tabs\">\n"
                 + "                        <li><a href=\"./editSusterView_?id_suster="+datanya.getId_Suster()+"\">Informasi Dasar</a></li>\n"
-                + "                        <li><a href=\"./formAddMinatBakat_suster?id_suster="+datanya.getId_Suster()+"\">Minat Bakat</a></li>\n"
+                + "                        <li><a href=\"./minatBakat_suster?id_suster="+datanya.getId_Suster()+"\">Minat Bakat</a></li>\n"
                 + "                        <li class=\"active\" ><a data-toggle=\"tab\" href=\"#\">Riwayat Pendidikan</a></li>\n"
                 + "                    </ul>\n"
                 + "\n"
