@@ -67,14 +67,12 @@ public class tambahMinatBakat_ extends HttpServlet {
             if (rs.next()) {
                 minat_bakat = rs.getString("minatbakat");
             }
-            System.out.println(minat_bakat);
             
-//            PreparedStatement prpStmt2 = con.prepareStatement("UPDATE minatbakat=? WHERE id_suster=?");
-//            prpStmt2.setString(1, minat_bakatnyaSuster.getId_suster());
-//            prpStmt2.setString(2, minat_bakatnyaSuster.getMinatBakat());
-//
-//            prpStmt2.executeUpdate();
-//            prpStmt2.close();
+            PreparedStatement prpStmt2 = con.prepareStatement("UPDATE minatbakat_suster SET minatbakat=? WHERE id_suster=?");
+            prpStmt2.setString(1, minat_bakat + list_minatBakat);
+            prpStmt2.setString(2, minat_bakatnyaSuster.getId_Suster());
+
+            prpStmt2.executeUpdate();
             con.close();
             
 

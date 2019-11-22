@@ -64,14 +64,7 @@ public class minatBakat_suster extends HttpServlet {
                 minatBakat=rs2.getString("minatbakat");
             }
              String arrMinatBakat[] = minatBakat.split(",");
-            for (int i = 1; i < arrMinatBakat.length; i++) {
-                if(arrMinatBakat.length<1){
-                    System.out.println("KOSONG");
-                }
-                else{
-                    System.out.println(arrMinatBakat[i]);
-                }
-            }
+            
 
             try {
                 out.println("<!DOCTYPE html>\n"
@@ -119,11 +112,11 @@ public class minatBakat_suster extends HttpServlet {
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
                         + "                            <hr>\n"
-                        + "                            <form class=\"form\" method=\"GET\" id=\"registrationForm\">\n"
+                        + "                            <form class=\"form\" id=\"registrationForm\">\n"
                         + "                                    \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n"
-                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
+                        + "										<input type=\"text\"  class=\"form-control\" name=\"id_suster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
                         + "                                </div>\n"
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
