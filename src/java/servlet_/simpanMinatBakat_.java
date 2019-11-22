@@ -41,14 +41,6 @@ public class simpanMinatBakat_ extends HttpServlet {
         
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -58,7 +50,7 @@ public class simpanMinatBakat_ extends HttpServlet {
         String list_minatBakat = "";
         
         for (int i = 0; i < minatBakat.length; i++) {
-            list_minatBakat = list_minatBakat+" | "+minatBakat[i];
+            list_minatBakat = list_minatBakat+" , "+minatBakat[i];
         }
         minatBakat_suster minat_bakatnyaSuster = new minatBakat_suster();
         minat_bakatnyaSuster.setId_suster(idSuster);
@@ -78,7 +70,7 @@ public class simpanMinatBakat_ extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("./editSusterView_?id_suster?"+minat_bakatnyaSuster.getId_suster());
+        response.sendRedirect("./editSusterView_?id_suster="+minat_bakatnyaSuster.getId_suster());
         
         
        

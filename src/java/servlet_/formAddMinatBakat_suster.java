@@ -47,11 +47,14 @@ public class formAddMinatBakat_suster extends HttpServlet {
             Connection conn = koneksi_db.initializeDatabase();
 
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
+            PreparedStatement ps2= conn.prepareStatement("SELECT * FROM minatbakat_suster WGERE id_suster=?");
 
             String idnyaSuster = request.getParameter("id_suster");
             ps.setString(1, idnyaSuster);
+            ps2.setString(1, idnyaSuster);
 
             ResultSet rs = ps.executeQuery();
+            ResultSet rs2 = ps2.executeQuery();
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
 

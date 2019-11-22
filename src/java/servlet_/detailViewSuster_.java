@@ -62,10 +62,13 @@ public class detailViewSuster_ extends HttpServlet {
             Connection conn = koneksi_db.initializeDatabase();
 
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
             String id_suster = request.getParameter("id_suster");
             ps.setString(1, id_suster);
+            ps2.setString(1, id_suster);
 
             ResultSet rs = ps.executeQuery();
+            ResultSet rs2 = ps2.executeQuery();
 
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
@@ -79,6 +82,12 @@ public class detailViewSuster_ extends HttpServlet {
                 datanya.setTanggal_lahir_suster(rs.getString("tanggal_lahir_suster"));
 
             }
+
+            String minat_bakat = "";
+            if (rs2.next()) {
+                minat_bakat = rs2.getString("minatbakat");
+            }
+            String arrMinatBakat[] = minat_bakat.split(",");
 
             try {
                 out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
@@ -133,7 +142,7 @@ public class detailViewSuster_ extends HttpServlet {
                         + "          <div class=\"social\">\n"
                         + "            <ul>\n"
                         + "              <li><a class='north' href=\"javascript:window.print()\" title=\"Print\"><img src=\"images/icn-print.jpg\"/></a></li>\n"
-                        + "              <li><a class='north' href=\"editSusterView_?id_suster="+datanya.getId_Suster()+"\" title=\"Edit\"> <img src=\"https://img.icons8.com/wired/25/000000/edit.png\"/></a></li>"
+                        + "              <li><a class='north' href=\"editSusterView_?id_suster=" + datanya.getId_Suster() + "\" title=\"Edit\"> <img src=\"https://img.icons8.com/wired/25/000000/edit.png\"/></a></li>"
                         + "              </ul>\n"
                         + "          </div>\n"
                         + "          <!-- End Social -->\n"
@@ -184,31 +193,14 @@ public class detailViewSuster_ extends HttpServlet {
                         + "        <!-- End 3rd Row -->\n"
                         + "        <!-- Begin 4th Row -->\n"
                         + "        <div class=\"entry\">\n"
-                        + "          <h2>SKILLS</h2>\n"
+                        + "          <h2>MINAT & BAKAT</h2>\n"
                         + "          <div class=\"content\">\n"
-                        + "            <h3>Software Knowledge</h3>\n"
-                        + "            <ul class=\"skills\">\n"
-                        + "              <li>Photoshop</li>\n"
-                        + "              <li>Illustrator</li>\n"
-                        + "              <li>InDesign</li>\n"
-                        + "              <li>Flash</li>\n"
-                        + "              <li>Fireworks</li>\n"
-                        + "              <li>Dreamweaver</li>\n"
-                        + "              <li>After Effects</li>\n"
-                        + "              <li>Cinema 4D</li>\n"
-                        + "              <li>Maya</li>\n"
-                        + "            </ul>\n"
-                        + "          </div>\n"
-                        + "          <div class=\"content\">\n"
-                        + "            <h3>Languages</h3>\n"
-                        + "            <ul class=\"skills\">\n"
-                        + "              <li>CSS/XHTML</li>\n"
-                        + "              <li>PHP</li>\n"
-                        + "              <li>JavaScript</li>\n"
-                        + "              <li>Ruby on Rails</li>\n"
-                        + "              <li>ActionScript</li>\n"
-                        + "              <li>C++</li>\n"
-                        + "            </ul>\n"
+                        + "            <h3>Keterampilan</h3>\n"
+                        + "            <ul class=\"skills\">\n");
+                for (int i = 1; i < arrMinatBakat.length; i++) {
+                    out.println("<br><li>" + arrMinatBakat[i] + "</li><br>");
+                }
+                out.println("          </ul>\n"
                         + "          </div>\n"
                         + "        </div>\n"
                         + "        <!-- End 4th Row -->\n"

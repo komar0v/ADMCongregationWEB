@@ -25,32 +25,15 @@ public class koneksi_db {
         return con;
     }
     
-//    public static List<biodata_suster> getAllData(){  
-//        List<biodata_suster> list=new ArrayList<biodata_suster>();  
-//          
-//        try{  
-//            Connection con=koneksi_db.initializeDatabase();  
-//            PreparedStatement ps=con.prepareStatement("SELECT id_suster, nama_suster, nama_asal_suster FROM biodata_suster");  
-//            ResultSet rs=ps.executeQuery();  
-//            while(rs.next()){  
-//                biodata_suster e=new biodata_suster();  
-//                e.setId_Suster(rs.getInt(1));  
-//                e.setNama_suster(rs.getString(2));  
-//                e.setNama_asal_suster(rs.getString(3));
-//                list.add(e);  
-//            }  
-//            con.close();  
-//        }catch(Exception e){e.printStackTrace();}  
-//          
-//        return list;  
-//    }
-    
     public static int delete(String id){  
         int status=0;  
         try{  
             Connection con=koneksi_db.initializeDatabase();  
-            PreparedStatement ps=con.prepareStatement("DELETE FROM biodata_suster where id_suster=?");  
-            ps.setString(1,id);  
+            PreparedStatement ps=con.prepareStatement("DELETE FROM biodata_suster WHERE id_suster=?");
+            PreparedStatement ps2=con.prepareStatement("DELETE FROM minatbakat_suster WHERE id_suster=?");
+            ps.setString(1,id);
+            ps2.setString(1, id);
+            ps2.executeUpdate();
             status=ps.executeUpdate();  
               
             con.close();  
