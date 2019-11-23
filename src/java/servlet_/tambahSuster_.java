@@ -96,7 +96,7 @@ public class tambahSuster_ extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("./db_suster/formAdd_suster.html");
+        response.sendRedirect("./showSuster_");
 
     }
 

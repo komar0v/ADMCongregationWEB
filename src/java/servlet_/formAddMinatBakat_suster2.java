@@ -24,8 +24,8 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "fromAddMinatBakat_suster2", urlPatterns = {"/fromAddMinatBakat_suster2"})
-public class fromAddMinatBakat_suster2 extends HttpServlet {
+@WebServlet(name = "formAddMinatBakat_suster2", urlPatterns = {"/formAddMinatBakat_suster2"})
+public class formAddMinatBakat_suster2 extends HttpServlet {
 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -102,7 +102,7 @@ public class fromAddMinatBakat_suster2 extends HttpServlet {
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
                         + "                            <hr>\n"
-                        + "                            <form class=\"form\" action=\"./tambahMinatBakat_\" method=\"POST\" id=\"registrationForm\">\n"
+                        + "                            <form class=\"form\" action=\"./tambahMinatBakatSuster\" method=\"GET\" id=\"registrationForm\">\n"
                         + "                                    \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n"

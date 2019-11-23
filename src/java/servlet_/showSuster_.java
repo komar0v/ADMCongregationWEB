@@ -228,7 +228,7 @@ public class showSuster_ extends HttpServlet {
                     + "                <div class=\"row\">\n"
                     + "                    <div class=\"col-sm-4\">\n"
                     + "						<div class=\"col-sm-6\">"
-                    + "							<a href=\"./db_suster/formAdd_suster.html\" class=\"btn btn-success\" data-toggle=\"modal\"><i class=\"material-icons\">&#xE147;</i> <span>Tambah Data Suster</span></a>"
+                    + "							<a href=\"./formAdd_suster\" class=\"btn btn-success\" data-toggle=\"modal\"><i class=\"material-icons\">&#xE147;</i> <span>Tambah Data Suster</span></a>"
                     + "						</div>						\n"
                     + "					</div>\n"
                     + "					<div class=\"col-sm-4\">\n"
