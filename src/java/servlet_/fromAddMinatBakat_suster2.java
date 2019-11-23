@@ -24,9 +24,19 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "formAddMinatBakat_suster", urlPatterns = {"/formAddMinatBakat_suster"})
-public class formAddMinatBakat_suster extends HttpServlet {
+@WebServlet(name = "fromAddMinatBakat_suster2", urlPatterns = {"/fromAddMinatBakat_suster2"})
+public class fromAddMinatBakat_suster2 extends HttpServlet {
 
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -164,6 +174,7 @@ public class formAddMinatBakat_suster extends HttpServlet {
         } catch (Exception ex) {
             Logger.getLogger(minatBakat_suster.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     /**
@@ -177,7 +188,6 @@ public class formAddMinatBakat_suster extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     /**

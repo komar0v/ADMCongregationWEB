@@ -85,7 +85,8 @@ public class tambahSuster_ extends HttpServlet {
             
             PreparedStatement prpStmt2=con.prepareStatement("INSERT INTO minatbakat_suster values(?,?)");
             prpStmt2.setString(1, suster.getId_Suster());
-            prpStmt2.setString(2, null);
+            prpStmt2.setString(2, "");
+            prpStmt2.executeUpdate();
 
             prpStmt.executeUpdate();
             prpStmt.close();
