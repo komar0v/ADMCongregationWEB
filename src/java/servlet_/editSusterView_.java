@@ -121,7 +121,7 @@ public class editSusterView_ extends HttpServlet {
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Informasi Dasar</a></li>"
                         + "                        <li ><a href=\"./minatBakat_suster?id_suster="+datanya.getId_Suster()+"\">Minat Bakat</a></li>"
-                                + "                <li><a href=\"./formAddRiwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
+                                + "                <li ><a href=\"./riwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
