@@ -70,7 +70,7 @@ public class tambahSuster_ extends HttpServlet {
 
         try {
             Connection con = koneksi_db.initializeDatabase();
-            PreparedStatement prpStmt = con.prepareStatement("INSERT INTO biodata_suster values(?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement prpStmt = con.prepareStatement("INSERT INTO biodata_suster VALUES(?,?,?,?,?,?,?,?,?,?)");
             
             prpStmt.setString(1, suster.getId_Suster());
             prpStmt.setString(2, suster.getNama_suster());
@@ -82,14 +82,22 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt.setInt(8, suster.getAnak_ke());
             prpStmt.setInt(9, suster.getJmlh_saudara());
             prpStmt.setBlob(10, inputStream);
+            prpStmt.executeUpdate();
+            prpStmt.close();
             
-            PreparedStatement prpStmt2=con.prepareStatement("INSERT INTO minatbakat_suster values(?,?)");
+            PreparedStatement prpStmt2=con.prepareStatement("INSERT INTO minatbakat_suster VALUES(?,?)");
             prpStmt2.setString(1, suster.getId_Suster());
             prpStmt2.setString(2, "");
             prpStmt2.executeUpdate();
+            prpStmt2.close();
+            
+            PreparedStatement prpStmt3=con.prepareStatement("INSERT INTO pendidikan_suster VALUES(?,?)");
+            prpStmt3.setString(1, suster.getId_Suster());
+            prpStmt3.setString(2, "");
+            prpStmt3.executeUpdate();
+            prpStmt3.close();
 
-            prpStmt.executeUpdate();
-            prpStmt.close();
+            
             con.close();
             
 
