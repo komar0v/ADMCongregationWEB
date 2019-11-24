@@ -38,7 +38,7 @@ public class riwayatPendidikan_suster extends HttpServlet {
             Connection conn = koneksi_db.initializeDatabase();
 
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM biodata_suster WHERE id_suster=?");
-            PreparedStatement ps2= conn.prepareStatement("SELECT * FROM pendidikan_suster WHERE id_suster=?");
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM pendidikan_suster WHERE id_suster=?");
 
             String idnyaSuster = request.getParameter("id_suster");
             ps.setString(1, idnyaSuster);
@@ -50,12 +50,12 @@ public class riwayatPendidikan_suster extends HttpServlet {
                 datanya.setId_Suster(rs.getString("id_suster"));
 
             }
-            String pendidikan="";
-            if(rs2.next()){
-                pendidikan=rs2.getString("pendidikan");
+            String pendidikan = "";
+            if (rs2.next()) {
+                pendidikan = rs2.getString("pendidikan");
             }
-             String arrRiwayatPendi[] = pendidikan.split(",");
-            
+            String arrRiwayatPendi[] = pendidikan.split(",");
+
             try {
                 out.println("<!DOCTYPE html>\n"
                         + "<html>\n"
@@ -94,7 +94,7 @@ public class riwayatPendidikan_suster extends HttpServlet {
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li ><a href=\"./editSusterView_?id_suster=" + datanya.getId_Suster() + "\">Informasi Dasar</a></li>\n"
-                        + "			   <li ><a href=\"./minatBakat_suster?id_suster="+datanya.getId_Suster()+"\">Minat Bakat</a></li>"
+                        + "			   <li ><a href=\"./minatBakat_suster?id_suster=" + datanya.getId_Suster() + "\">Minat Bakat</a></li>"
                         + "                        <li class=\"active\"><a href=\"#\">Riwayat Pendidikan</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
@@ -110,11 +110,10 @@ public class riwayatPendidikan_suster extends HttpServlet {
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
                         + "                       <hr><h4>Riwayat Pendidikan</h4> <div id=\"minat_bakat\">\n");
-               for (int i = 1; i < arrRiwayatPendi.length; i++) {
+                for (int i = 1; i < arrRiwayatPendi.length; i++) {
                     out.println("<br><li>" + arrRiwayatPendi[i] + "</li><br>");
                 }
-                
-                
+
                 out.println("                     </div>\n"
                         + "                    </div>\n"
                         + "\n"
@@ -122,7 +121,7 @@ public class riwayatPendidikan_suster extends HttpServlet {
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <div class=\"col-xs-12\">\n"
                         + "                                        <br>\n"
-                        + "<a href=\"./formAddMinatBakat_suster2?id_suster="+datanya.getId_Suster()+"\">TAMBAH DATA</a>                                        "
+                        + "<a href=\"./formAddRiwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">TAMBAH DATA</a>                                        "
                         + "<button class=\"button icon solid\" formaction=\"./#\" type=\"reset\"><i class=\"glyphicon glyphicon-edit\"></i> EDIT MINAT BAKAT</button>\n"
                         + "                                    </div>\n"
                         + "                                </div>\n"

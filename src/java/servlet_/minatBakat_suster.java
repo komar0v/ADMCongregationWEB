@@ -47,7 +47,7 @@ public class minatBakat_suster extends HttpServlet {
             Connection conn = koneksi_db.initializeDatabase();
 
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
-            PreparedStatement ps2= conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
 
             String idnyaSuster = request.getParameter("id_suster");
             ps.setString(1, idnyaSuster);
@@ -59,12 +59,11 @@ public class minatBakat_suster extends HttpServlet {
                 datanya.setId_Suster(rs.getString("id_suster"));
 
             }
-            String minatBakat="";
-            if(rs2.next()){
-                minatBakat=rs2.getString("minatbakat");
+            String minatBakat = "";
+            if (rs2.next()) {
+                minatBakat = rs2.getString("minatbakat");
             }
-             String arrMinatBakat[] = minatBakat.split(",");
-            
+            String arrMinatBakat[] = minatBakat.split(",");
 
             try {
                 out.println("<!DOCTYPE html>\n"
@@ -120,11 +119,10 @@ public class minatBakat_suster extends HttpServlet {
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
                         + "                       <hr><h4>Minat & Bakat</h4> <div id=\"minat_bakat\">\n");
-               for (int i = 1; i < arrMinatBakat.length; i++) {
+                for (int i = 1; i < arrMinatBakat.length; i++) {
                     out.println("<br><li>" + arrMinatBakat[i] + "</li><br>");
                 }
-                
-                
+
                 out.println("                     </div>\n"
                         + "                    </div>\n"
                         + "\n"
@@ -132,7 +130,7 @@ public class minatBakat_suster extends HttpServlet {
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <div class=\"col-xs-12\">\n"
                         + "                                        <br>\n"
-                        + "<a href=\"./formAddMinatBakat_suster2?id_suster="+datanya.getId_Suster()+"\">TAMBAH DATA</a>                                        "
+                        + "<a href=\"./formAddMinatBakat_suster2?id_suster=" + datanya.getId_Suster() + "\">TAMBAH DATA</a>                                        "
                         + "<button class=\"button icon solid\" formaction=\"./#\" type=\"reset\"><i class=\"glyphicon glyphicon-edit\"></i> EDIT MINAT BAKAT</button>\n"
                         + "                                    </div>\n"
                         + "                                </div>\n"
