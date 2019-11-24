@@ -63,12 +63,16 @@ public class detailViewSuster_ extends HttpServlet {
 
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
             PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
+            PreparedStatement ps3 = conn.prepareStatement("SELECT * FROM pendidikan_suster WHERE id_suster=?");
+            
             String id_suster = request.getParameter("id_suster");
             ps.setString(1, id_suster);
             ps2.setString(1, id_suster);
+            ps3.setString(1, id_suster);
 
             ResultSet rs = ps.executeQuery();
             ResultSet rs2 = ps2.executeQuery();
+            ResultSet rs3 = ps3.executeQuery();
 
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
@@ -88,6 +92,13 @@ public class detailViewSuster_ extends HttpServlet {
                 minat_bakat = rs2.getString("minatbakat");
             }
             String arrMinatBakat[] = minat_bakat.split(",");
+            
+            String riwayat_pendidikan = "";
+            if(rs3.next()){
+                riwayat_pendidikan = rs3.getString("pendidikan");
+            }
+            
+            String arrRiwayatPendidikan[] = riwayat_pendidikan.split(",");
 
             try {
                 out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
@@ -155,16 +166,15 @@ public class detailViewSuster_ extends HttpServlet {
                         + "        <!-- End 1st Row -->\n"
                         + "        <!-- Begin 2nd Row -->\n"
                         + "        <div class=\"entry\">\n"
-                        + "          <h2>EDUCATION</h2>\n"
+                        + "          <h2>PENDIDIKAN</h2>\n"
                         + "          <div class=\"content\">\n"
-                        + "            <h3>Sep 2005 - Feb 2007</h3>\n"
-                        + "            <p>Academy of Art University, London <br />\n"
-                        + "              <em>Master in Communication Design</em></p>\n"
-                        + "          </div>\n"
-                        + "          <div class=\"content\">\n"
-                        + "            <h3>Sep 2001 - Jun 2005</h3>\n"
-                        + "            <p>University of Art &amp; Design, New York <br />\n"
-                        + "              <em>Bachelor of Science in Graphic Design</em></p>\n"
+                        + "            <h3>Riwayat Pendidikan</h3>\n"
+                        + "              <ul class=\"info\">");
+                for (int i = 0; i < arrRiwayatPendidikan.length; i++) {
+                    out.println("<br><li>" + arrRiwayatPendidikan[i] + "</li><br>");
+                }
+                
+              out.println("              </ul>"
                         + "          </div>\n"
                         + "        </div>\n"
                         + "        <!-- End 2nd Row -->\n"

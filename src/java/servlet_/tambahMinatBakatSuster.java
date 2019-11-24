@@ -53,7 +53,6 @@ public class tambahMinatBakatSuster extends HttpServlet {
                 minat_bakat = rs.getString("minatbakat");
             }
             String minatBakat_updt = list_minatBakat + minat_bakat;
-            System.out.println(minatBakat_updt);
             con.close();
             koneksi_db.updateMinatbakat(minatBakat_updt, idSuster);
         } catch (Exception e) {

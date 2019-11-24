@@ -61,4 +61,19 @@ public class koneksi_db {
             e.printStackTrace();
         }
     }
+    
+    public static void updateRiwayatPendidikan(String dataPendidikan, String idSuster) {
+        try{
+            Connection con3 = koneksi_db.initializeDatabase();
+            PreparedStatement prpStmt3 = con3.prepareStatement("UPDATE pendidikan_suster SET pendidikan=? WHERE id_suster=?");
+            prpStmt3.setString(1, dataPendidikan);
+            prpStmt3.setString(2, idSuster);
+
+            prpStmt3.executeUpdate();
+            con3.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 }

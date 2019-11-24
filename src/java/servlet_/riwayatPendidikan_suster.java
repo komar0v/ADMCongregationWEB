@@ -138,7 +138,7 @@ public class riwayatPendidikan_suster extends HttpServlet {
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
                         + "                       <hr><h4>Riwayat Pendidikan</h4> <div id=\"minat_bakat\">\n");
-                for (int i = 1; i < arrRiwayatPendi.length; i++) {
+                for (int i = 0; i < arrRiwayatPendi.length-1; i++) {
                     out.println("<br><li>" + arrRiwayatPendi[i] + "</li><br>");
                 }
 
