@@ -101,8 +101,23 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt4.setString(1, suster.getId_Suster());
             prpStmt4.setString(2, "");
             prpStmt4.setString(3, "");
-            
-            
+            prpStmt4.setString(4, "");
+            prpStmt4.setString(5, "");
+            prpStmt4.setString(6, "");
+            prpStmt4.setString(7, "");
+            prpStmt4.setString(8, "");
+            prpStmt4.setString(9, "");
+            prpStmt4.setString(10, "");
+            prpStmt4.setString(11, "");
+            prpStmt4.setString(12, "");
+            prpStmt4.setString(13, "");
+            prpStmt4.setString(14, "");
+            prpStmt4.setString(15, "");
+            prpStmt4.setString(16, "");
+            prpStmt4.setString(17, "");
+            prpStmt4.setString(18, "");
+            prpStmt4.setString(19, "");
+            prpStmt4.setString(20, "");
             
             con.close();
             
