@@ -70,7 +70,7 @@ public class tambahSuster_ extends HttpServlet {
 
         try {
             Connection con = koneksi_db.initializeDatabase();
-            
+
             PreparedStatement prpStmt = con.prepareStatement("INSERT INTO biodata_suster VALUES(?,?,?,?,?,?,?,?,?,?)");
             prpStmt.setString(1, suster.getId_Suster());
             prpStmt.setString(2, suster.getNama_suster());
@@ -84,19 +84,19 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt.setBlob(10, inputStream);
             prpStmt.executeUpdate();
             prpStmt.close();
-            
-            PreparedStatement prpStmt2=con.prepareStatement("INSERT INTO minatbakat_suster VALUES(?,?)");
+
+            PreparedStatement prpStmt2 = con.prepareStatement("INSERT INTO minatbakat_suster VALUES(?,?)");
             prpStmt2.setString(1, suster.getId_Suster());
             prpStmt2.setString(2, "");
             prpStmt2.executeUpdate();
             prpStmt2.close();
-            
-            PreparedStatement prpStmt3=con.prepareStatement("INSERT INTO pendidikan_suster VALUES(?,?)");
+
+            PreparedStatement prpStmt3 = con.prepareStatement("INSERT INTO pendidikan_suster VALUES(?,?)");
             prpStmt3.setString(1, suster.getId_Suster());
             prpStmt3.setString(2, "");
             prpStmt3.executeUpdate();
             prpStmt3.close();
-            
+
             PreparedStatement prpStmt4=con.prepareStatement("INSERT INTO databiara_suster VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             prpStmt4.setString(1, suster.getId_Suster());
             prpStmt4.setString(2, "");
@@ -118,9 +118,10 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt4.setString(18, "");
             prpStmt4.setString(19, "");
             prpStmt4.setString(20, "");
-            
+            prpStmt4.executeUpdate();
+            prpStmt4.close();
+
             con.close();
-            
 
         } catch (Exception e) {
             e.printStackTrace();

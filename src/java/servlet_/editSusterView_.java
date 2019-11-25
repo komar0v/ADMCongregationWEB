@@ -150,8 +150,9 @@ public class editSusterView_ extends HttpServlet {
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Informasi Dasar</a></li>"
                         + "                        <li ><a href=\"./minatBakat_suster?id_suster=" + datanya.getId_Suster() + "\">Minat Bakat</a></li>"
-                        + "                <li ><a href=\"./riwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
-                        + "                    </ul>\n"
+                        + "                        <li ><a href=\"./riwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
+                        + "                        <li ><a href=\"./editDataBiaraView_?id_suster="+datanya.getId_Suster()+"\">Data Biara</a></li>            "
+                                + "</ul>\n"
                         + "\n"
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
@@ -249,7 +250,7 @@ public class editSusterView_ extends HttpServlet {
             } finally {
                 out.close();
             }
-
+            conn.close();
         } catch (Exception ex) {
             Logger.getLogger(editSusterView_.class.getName()).log(Level.SEVERE, null, ex);
         }
