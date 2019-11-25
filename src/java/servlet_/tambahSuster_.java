@@ -70,8 +70,8 @@ public class tambahSuster_ extends HttpServlet {
 
         try {
             Connection con = koneksi_db.initializeDatabase();
-            PreparedStatement prpStmt = con.prepareStatement("INSERT INTO biodata_suster VALUES(?,?,?,?,?,?,?,?,?,?)");
             
+            PreparedStatement prpStmt = con.prepareStatement("INSERT INTO biodata_suster VALUES(?,?,?,?,?,?,?,?,?,?)");
             prpStmt.setString(1, suster.getId_Suster());
             prpStmt.setString(2, suster.getNama_suster());
             prpStmt.setString(3, suster.getNama_asal_suster());
@@ -96,7 +96,13 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt3.setString(2, "");
             prpStmt3.executeUpdate();
             prpStmt3.close();
-
+            
+            PreparedStatement prpStmt4=con.prepareStatement("INSERT INTO databiara_suster VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            prpStmt4.setString(1, suster.getId_Suster());
+            prpStmt4.setString(2, "");
+            prpStmt4.setString(3, "");
+            
+            
             
             con.close();
             
