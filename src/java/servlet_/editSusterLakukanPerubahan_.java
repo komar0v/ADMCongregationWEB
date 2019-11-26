@@ -111,7 +111,7 @@ public class editSusterLakukanPerubahan_ extends HttpServlet {
             con.close();
             try {
                 out.println("<script type=\"text/javascript\">");
-                out.println("alert('Data  "+suster.getNama_suster()+"  Berhasil Diedit!');");
+                out.println("alert('Data  "+suster.getNama_suster()+"  berrhasil diedit!');");
                 out.println("location='./showSuster_';");
                 out.println("</script>");
 
