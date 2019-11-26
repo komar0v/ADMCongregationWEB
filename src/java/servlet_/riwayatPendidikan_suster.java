@@ -124,6 +124,7 @@ public class riwayatPendidikan_suster extends HttpServlet {
                         + "                        <li ><a href=\"./editSusterView_?id_suster=" + datanya.getId_Suster() + "\">Informasi Dasar</a></li>\n"
                         + "			   <li ><a href=\"./minatBakat_suster?id_suster=" + datanya.getId_Suster() + "\">Minat Bakat</a></li>"
                         + "                        <li class=\"active\"><a href=\"#\">Riwayat Pendidikan</a></li>\n"
+                        + "                        <li ><a href=\"./editDataBiaraView_?id_suster="+datanya.getId_Suster()+"\">Data Biara</a></li>"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"

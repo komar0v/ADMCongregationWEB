@@ -133,6 +133,7 @@ public class minatBakat_suster extends HttpServlet {
                         + "                        <li ><a href=\"./editSusterView_?id_suster=" + datanya.getId_Suster() + "\">Informasi Dasar</a></li>\n"
                         + "			   <li class=\"active\"><a href=\"#\">Minat Bakat</a></li>"
                         + "                        <li><a href=\"./riwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
+                        + "                        <li ><a href=\"./editDataBiaraView_?id_suster="+datanya.getId_Suster()+"\">Data Biara</a></li>"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
