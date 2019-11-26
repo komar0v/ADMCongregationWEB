@@ -72,7 +72,7 @@ public class editDataBiaraLakukanPerubahan_ extends HttpServlet {
         datanya.setTanggal_pembaruan_ketiga(request.getParameter("tanggalPembaruanKetiga"));
         datanya.setTempat_kaulkekal(request.getParameter("tempatKaulKekal"));
         datanya.setTanggal_kaulkekal(request.getParameter("tanggalKaulKekal"));
-        
+        //hehe
         try {
             Connection con = koneksi_db.initializeDatabase();
             PreparedStatement prpStmt = con.prepareStatement("UPDATE databiara_suster SET tempat_baptis=?, tanggal_baptis=?, tempat_sakramen_krisma=?, tanggal_sakramen_krisma=?, tempat_komuni_pertama=?, tanggal_komuni_pertama=?, paroki_asal=?, ukuran_pakaian=?, tempat_kleding=?, tanggal_kleding=?, profes_pertama=?, tempat_pembaruan_pertama=?, tanggal_pembaruan_pertama=?, tempat_pembaruan_kedua=?, tanggal_pembaruan_kedua=?, tempat_pembaruan_ketiga=?, tanggal_pembaruan_ketiga=?, tempat_kaulkekal=?, tanggal_kaulkekal=? WHERE id_suster=?");
