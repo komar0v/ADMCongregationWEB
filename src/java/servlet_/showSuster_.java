@@ -209,7 +209,7 @@ public class showSuster_ extends HttpServlet {
                     + "        var term = $(this).val().toLowerCase();\n"
                     + "        $(\"table tbody tr\").each(function(){\n"
                     + "            $row = $(this);\n"
-                    + "            var name = $row.find(\"td:nth-child(2)\").text().toLowerCase();\n"
+                    + "            var name = $row.find(\"td:nth-child(3)\").text().toLowerCase();\n"
                     + "            console.log(name);\n"
                     + "            if(name.search(term) < 0){                \n"
                     + "                $row.hide();\n"
@@ -238,7 +238,7 @@ public class showSuster_ extends HttpServlet {
                     + "                        <div class=\"search-box\">\n"
                     + "							<div class=\"input-group\">\n"
                     + "								<span class=\"input-group-addon\"><i class=\"material-icons\">&#xE8B6;</i></span>\n"
-                    + "								<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Search&hellip;\">\n"
+                    + "								<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Cari berdasar nama&hellip;\">\n"
                     + "							</div>\n"
                     + "                        </div>\n"
                     + "                    </div>\n"
@@ -246,7 +246,7 @@ public class showSuster_ extends HttpServlet {
                     + "            </div>");
             output.println("<table class=\"table table-bordered\">");
             output.println("<thead><tr><th>#</th>\n"
-                    + "                        <th>ID SUSTER </th>\n"
+                    + "                        <th>NIK SUSTER </th>\n"
                     + "                        <th>NAMA SUSTER</th>\n"
                     + "                        <th>NAMA ASAL SUSTER</th>\n"
                     + "                        <th>OPSI</th>\n"

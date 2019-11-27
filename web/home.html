@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Animated Grid Boxes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style type="text/css">
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url('https://fonts.googleapis.com/css?family=Nunito:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+.board:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.board:before {
+  content: "";
+  display: table;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  font-style: normal;
+  display: block;
+}
+
+i {
+  font-size: 4em;
+  line-height: 1;
+}
+
+h5 {
+  font-family: "Heebo";
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 1;
+  margin: .5em;
+  position: relative;
+  z-index: 99;
+}
+
+body {
+  background: #fafafa;
+  color: #a5a5a5;
+  text-align: center;
+  padding: 2em 0 0;
+  font-family: "Nunito";
+  font-weight: 400;
+}
+
+.board {
+  width: 860px;
+  margin: 4em auto;
+}
+
+section {
+  width: 33.333333333333333%;
+  display: block;
+  float: left;
+  position: relative;
+  height: 12em;
+  border: 1px solid #f2f2f2;
+  overflow: hidden;
+}
+
+.tile {
+  padding: 2em .8em;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -moz-transition: top 0.55s ease-in;
+  -o-transition: top 0.55s ease-in;
+  -webkit-transition: top 0.55s ease-in;
+  transition: top 0.55s ease-in;
+}
+.tile:hover {
+  cursor: pointer;
+}
+
+.desc {
+  top: 100%;
+  padding-top: 4em;
+  background: #f7f7f7 span;
+  background-display: block;
+  background-margin: 0 0 .75em;
+}
+
+/*** Animations ***/
+@keyframes spinOut {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1.0;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes spinIn {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-360deg);
+    opacity: 1.0;
+  }
+}
+@keyframes scootOut {
+  0% {
+    transform: translateY(0);
+  }
+  5% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(110px);
+  }
+}
+@keyframes scootIn {
+  0% {
+    transform: translateY(110px);
+  }
+  66% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes spinOut {
+  0% {
+    -webkit-transform: rotate(0deg);
+    opacity: 1.0;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes spinIn {
+  0% {
+    -webkit-transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    opacity: 1.0;
+  }
+}
+@-webkit-keyframes scootOut {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  5% {
+    -webkit-transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(110px);
+  }
+}
+@-webkit-keyframes scootIn {
+  0% {
+    -webkit-transform: translateY(110px);
+  }
+  66% {
+    -webkit-transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+@-moz-keyframes spinOut {
+  0% {
+    -moz-transform: rotate(0deg);
+    opacity: 1.0;
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@-moz-keyframes spinIn {
+  0% {
+    -moz-transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: rotate(-360deg);
+    opacity: 1.0;
+  }
+}
+@-moz-keyframes scootOut {
+  0% {
+    -moz-transform: translateY(0);
+  }
+  5% {
+    -moz-transform: translateY(-15px);
+  }
+  100% {
+    -moz-transform: translateY(110px);
+  }
+}
+@-moz-keyframes scootIn {
+  0% {
+    -moz-transform: translateY(110px);
+  }
+  66% {
+    -moz-transform: translateY(-5px);
+  }
+  100% {
+    -moz-transform: translateY(0px);
+  }
+}
+.spin-in {
+  animation: spinIn 0.4s 0.2s ease both;
+  -moz-animation: spinIn 0.4s 0.2s ease both;
+  -webkit-animation: spinIn 0.4s 0.2s ease both;
+}
+
+.spin-out {
+  animation: spinOut 0.4s 0s ease both;
+  -moz-animation: spinOut 0.4s 0s ease both;
+  -webkit-animation: spinOut 0.4s 0s ease both;
+}
+
+.scoot-out {
+  animation: scootOut 0.5s 0s ease both;
+  -moz-animation: scootOut 0.5s 0s ease both;
+  -webkit-animation: scootOut 0.5s 0s ease both;
+}
+
+.scoot-in {
+  animation: scootIn 1s 0s ease both;
+  -moz-animation: scootIn 1s 0s ease both;
+  -webkit-animation: scootIn 1s 0s ease both;
+}
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Animated Info Boxes</h1>
+<br>
+<br>
+<div class="board">
+
+  <section>
+    <div class="tile cover">
+      <i class="entypo-plus-squared"></i>
+      <h5>Tambah Data</h5>
+    </div>
+    <div class="tile desc">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ab ipsa commodi quas voluptatibus?</span>
+      <a href="">View Project</a>
+    </div>
+  </section>
+  
+   <section>
+    <div class="tile cover">
+      <i class="entypo-eye"></i>
+         <h5>Lihat Data</h5>
+    </div>
+    <div class="tile desc">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ab ipsa commodi quas voluptatibus.</span>
+      <a href="">View Project</a>
+    </div>
+  </section>
+  
+   <section>
+    <div class="tile cover">
+      <i class="entypo-evernote"></i>
+      <h5>Evernote</h5>
+    </div>
+    <div class="tile desc">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ab ipsa commodi quas voluptatibus.</span>
+      <a href="">View Project</a>
+    </div>
+  </section>
+  
+  <section>
+    <div class="">
+      <i class=""></i>
+      <h5></h5>
+    </div>
+    <div >
+      <span></span>
+    </div>
+  </section>
+   
+ <section>
+    <div class="tile cover">
+      <i class="entypo-logout"></i>
+      <h5>LOGOUT</h5>
+    </div>
+    <div class="tile desc">
+      <span>Untuk logout silahkan..</span>
+	  <a href="">View Project</a>
+    </div>
+  </section>
+  
+  <section>
+    <div class="">
+      <i class=""></i>
+      <h5></h5>
+    </div>
+    <div >
+      <span></span>
+    </div>
+  </section>
+ 
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script>
+  $(document).ready(function() {
+  $('section').click(function() {
+    var $this = $(this);
+    if ($this.hasClass("show-desc")) {
+       $this.find('div.cover').css({top: "0"});
+       $this.find('div.desc').css({top: "100%"});
+       $this.find('[class*="entypo-"]').removeClass('spin-out').addClass('spin-in');
+      $this.find('.cover h5').addClass('scoot-in');
+       $this.removeClass("show-desc");
+    }
+    else {
+       $this.find('div.cover').css({top: "-100%"});
+       $this.find('div.desc').css({top: "0"});
+       $this.find('[class*="entypo-"]').removeClass('spin-in').addClass('spin-out');
+       $this.find('.cover h5').removeClass('scoot-in').addClass('scoot-out');
+       $this.addClass("show-desc");
+    }
+  });
+});
+  </script>
+
+</body>
+</html>
