@@ -64,7 +64,7 @@ public class detailViewSuster_ extends HttpServlet {
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
             PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
             PreparedStatement ps3 = conn.prepareStatement("SELECT * FROM pendidikan_suster WHERE id_suster=?");
-            
+
             String id_suster = request.getParameter("id_suster");
             ps.setString(1, id_suster);
             ps2.setString(1, id_suster);
@@ -92,12 +92,12 @@ public class detailViewSuster_ extends HttpServlet {
                 minat_bakat = rs2.getString("minatbakat");
             }
             String arrMinatBakat[] = minat_bakat.split(",");
-            
+
             String riwayat_pendidikan = "";
-            if(rs3.next()){
+            if (rs3.next()) {
                 riwayat_pendidikan = rs3.getString("pendidikan");
             }
-            
+
             String arrRiwayatPendidikan[] = riwayat_pendidikan.split(",");
 
             try {
@@ -122,9 +122,37 @@ public class detailViewSuster_ extends HttpServlet {
                         + "<script type=\"text/javascript\" src=\"js/custom.js\"></script>\n"
                         + "<script type=\"text/javascript\">\n"
                         + "		Cufon.replace('h1,h2');\n"
-                        + "</script>\n"
+                        + "</script>"
+                        + "<style>\n"
+                        + ".topnav {\n"
+                        + "  overflow: hidden;\n"
+                        + "  background-color: #333;\n"
+                        + "}\n"
+                        + "\n"
+                        + ".topnav a {\n"
+                        + "  float: left;\n"
+                        + "  color: #f2f2f2;\n"
+                        + "  text-align: center;\n"
+                        + "  padding: 10px 10px;\n"
+                        + "  text-decoration: none;\n"
+                        + "  font-size: 18px;\n"
+                        + "}\n"
+                        + "\n"
+                        + ".topnav a:hover {\n"
+                        + "  background-color: #ddd;\n"
+                        + "  color: black;\n"
+                        + "}\n"
+                        + "\n"
+                        + ".topnav a.active {\n"
+                        + "  background-color: #4CAF50;\n"
+                        + "  color: white;\n"
+                        + "}\n"
+                        + "</style>\n"
                         + "</head>\n"
-                        + "<body>\n"
+                        + "<body>"
+                        + "<div class=\"topnav\">\n"
+                        + "  <a class=\"active\" href=\"./home_\">Home</a>\n"
+                        + "</div>\n"
                         + "<!-- Begin Wrapper -->\n"
                         + "<div id=\"wrapper\">\n"
                         + "  <div class=\"wrapper-top\"></div>\n"
@@ -173,8 +201,8 @@ public class detailViewSuster_ extends HttpServlet {
                 for (int i = 0; i < arrRiwayatPendidikan.length; i++) {
                     out.println("<br><li>" + arrRiwayatPendidikan[i] + "</li><br>");
                 }
-                
-              out.println("              </ul>"
+
+                out.println("              </ul>"
                         + "          </div>\n"
                         + "        </div>\n"
                         + "        <!-- End 2nd Row -->\n"

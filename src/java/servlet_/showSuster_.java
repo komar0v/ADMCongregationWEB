@@ -67,6 +67,30 @@ public class showSuster_ extends HttpServlet {
                     + "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n"
                     + "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n"
                     + "<style type=\"text/css\">\n"
+                    + ".topnav {\n"
+                    + "  overflow: hidden;\n"
+                    + "  background-color: #333;\n"
+                    + "}\n"
+                    + "\n"
+                    + ".topnav a {\n"
+                    + "  float: left;\n"
+                    + "  color: #f2f2f2;\n"
+                    + "  text-align: center;\n"
+                    + "  padding: 10px 10px;\n"
+                    + "  text-decoration: none;\n"
+                    + "  font-size: 18px;\n"
+                    + "}\n"
+                    + "\n"
+                    + ".topnav a:hover {\n"
+                    + "  background-color: #ddd;\n"
+                    + "  color: black;\n"
+                    + "}\n"
+                    + "\n"
+                    + ".topnav a.active {\n"
+                    + "  background-color: #4CAF50;\n"
+                    + "  color: white;\n"
+                    + "}"
+                    + ""
                     + "    body {\n"
                     + "        color: #566787;\n"
                     + "        background: #f5f5f5;\n"
@@ -221,7 +245,10 @@ public class showSuster_ extends HttpServlet {
                     + "});\n"
                     + "</script>\n"
                     + "</head>\n"
-                    + "<body>\n"
+                    + "<body>"
+                    + "<div class=\"topnav\">\n" +
+"  <a class=\"active\" href=\"./home_\">Home</a>\n" +
+"</div>\n"
                     + "    <div class=\"container\">\n"
                     + "        <div class=\"table-wrapper\">			\n"
                     + "            <div class=\"table-title\">\n"
@@ -238,7 +265,7 @@ public class showSuster_ extends HttpServlet {
                     + "                        <div class=\"search-box\">\n"
                     + "							<div class=\"input-group\">\n"
                     + "								<span class=\"input-group-addon\"><i class=\"material-icons\">&#xE8B6;</i></span>\n"
-                    + "								<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Cari berdasar nama&hellip;\">\n"
+                    + "								<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Cari nama suster&hellip;\">\n"
                     + "							</div>\n"
                     + "                        </div>\n"
                     + "                    </div>\n"
@@ -254,25 +281,25 @@ public class showSuster_ extends HttpServlet {
                     + "                </thead>");
             output.println("<tbody>");
             int urutan = 0;
-            List<biodata_suster> list=new ArrayList<biodata_suster>();  
+            List<biodata_suster> list = new ArrayList<biodata_suster>();
             while (resultset.next()) {
                 urutan = urutan + 1;
                 String id_Suster = resultset.getString("id_suster");
                 String nama_suster = resultset.getString("nama_suster");
                 String nama_asal_suster = resultset.getString("nama_asal_suster");
-                
+
                 biodata_suster data = new biodata_suster();
                 data.setId_Suster(id_Suster);
                 data.setNama_suster(nama_suster);
-                list.add(data); 
-                
+                list.add(data);
+
                 output.println("<tr>" + "<td>" + urutan + "</td>" + "<td>" + data.getId_Suster() + "</td><td>" + nama_asal_suster + "</td><td>" + nama_suster + "</td>"
                         + "<td>\n"
-                        + "							<a href=\"detailViewSuster_?id_suster="+data.getId_Suster()+"\" class=\"view\" title=\"View\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE417;</i></a>\n"
+                        + "							<a href=\"detailViewSuster_?id_suster=" + data.getId_Suster() + "\" class=\"view\" title=\"View\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE417;</i></a>\n"
                         + "                            <a href=\"#\" class=\"edit\" title=\"Edit\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE254;</i></a>\n"
-                        + "                            <a href=\"hapusSuster_?id_suster="+data.getId_Suster()+"\" class=\"delete\" title=\"Delete\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE872;</i></a>\n"
+                        + "                            <a href=\"hapusSuster_?id_suster=" + data.getId_Suster() + "\" class=\"delete\" title=\"Delete\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE872;</i></a>\n"
                         + "                        </td></tr>");
-                
+
             }
             output.println("</tbody>");
             output.println("</table>");
