@@ -1,254 +1,117 @@
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Data</title>
         <style type="text/css">
-            @use postcss-cssnext;
-            /* helpers/align.css */
 
-            .align {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            /* helpers/grid.css */
-
-            :root {
-                --gridMaxWidth: 24em;
-                --gridWidth: 90%;
-            }
-
-            .grid {
-                margin-left: auto;
-                margin-right: auto;
-                max-width: var(--gridMaxWidth);
-                width: var(--gridWidth);
-            }
-
-            /* helpers/icon.css */
-
-            .icon {
-                display: inline-block;
-                height: 1.25em;
-                line-height: 1.25em;
-                margin-right: 0.625em;
-                text-align: center;
-                vertical-align: middle;
-                width: 1.25em;
-            }
-
-            .icon--info {
-                background-color: #e5e5e5;
-                border-radius: 50%;
-            }
-
-            /* layout/base.css */
-
-            :root {
-                --bodyBackgroundColor: #eaeaea;
-                --bodyColor: #999;
-                --bodyFontFamily: 'Helvetica', 'Arial';
-                --bodyFontFamilyFallback: sans-serif;
-                --bodyFontSize: 0.875rem;
-                --bodyFontWeight: 400;
-                --bodyLineHeight: 1.5;
-            }
-
-            *,
-            *::before,
-            *::after {
-                box-sizing: inherit;
-            }
-
-            html {
-                box-sizing: border-box;
-                height: 100%;
-            }
+            /* 'Open Sans' font from Google Fonts */
+            @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
             body {
-                background-color: var(--bodyBackgroundColor);
-                font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
-                font-size: var(--bodyFontSize);
-                font-weight: var(--bodyFontWeight);
-                line-height: var(--bodyLineHeight);
-                margin: 0;
-                min-height: 100%;
+                background: #456;
+                font-family: 'Open Sans', sans-serif;
             }
 
-            /* modules/anchor.css */
-
-            :root {
-                --anchorColor: inherit;
-                --anchorHoverColor: #1dabb8;
+            .login {
+                width: 400px;
+                margin: 16px auto;
+                font-size: 16px;
             }
 
-            a {
-                color: var(--anchorColor);
-                text-decoration: none;
-                transition: color 0.3s;
+            /* Reset top and bottom margins from certain elements */
+            .login-header,
+            .login p {
+                margin-top: 0;
+                margin-bottom: 0;
             }
 
-            a:hover {
-                color: var(--anchorHoverColor);
+            /* The triangle form is achieved by a CSS hack */
+            .login-triangle {
+                width: 0;
+                margin-right: auto;
+                margin-left: auto;
+                border: 12px solid transparent;
+                border-bottom-color: #28d;
             }
 
-            /* modules/form.css */
-
-            fieldset {
-                border: none;
-                margin: 0;
+            .login-header {
+                background: #28d;
+                padding: 20px;
+                font-size: 1.4em;
+                font-weight: normal;
+                text-align: center;
+                text-transform: uppercase;
+                color: #fff;
             }
 
-            input {
-                appearance: none;
-                border: none;
-                font: inherit;
-                margin: 0;
-                outline: none;
-                padding: 0;
+            .login-container {
+                background: #ebebeb;
+                padding: 12px;
             }
 
-            input[type='submit'] {
+            /* Every row inside .login-container is defined with p tags */
+            .login p {
+                padding: 12px;
+            }
+
+            .login input {
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+                border-width: 1px;
+                border-style: solid;
+                padding: 16px;
+                outline: 0;
+                font-family: inherit;
+                font-size: 0.95em;
+            }
+
+            .login input[type="email"],
+            .login input[type="password"] {
+                background: #fff;
+                border-color: #bbb;
+                color: #555;
+            }
+
+            /* Text fields' focus effect */
+            .login input[type="email"]:focus,
+            .login input[type="password"]:focus {
+                border-color: #888;
+            }
+
+            .login input[type="submit"] {
+                background: #28d;
+                border-color: transparent;
+                color: #fff;
                 cursor: pointer;
             }
 
-            .form input[type='email'],
-            .form input[type='password'] {
-                width: 100%;
+            .login input[type="submit"]:hover {
+                background: #17c;
             }
 
-            /* modules/login.css */
-
-            :root {
-                --loginBorderRadius: 0.25em;
-                --loginHeaderBackgroundColor: #282830;
-
-                --loginInputBorderRadius: 0.25em;
+            /* Buttons' focus effect */
+            .login input[type="submit"]:focus {
+                border-color: #05a;
             }
-
-            .login__header {
-                background-color: var(--loginHeaderBackgroundColor);
-                border-top-left-radius: var(--loginBorderRadius);
-                border-top-right-radius: var(--loginBorderRadius);
-                color: #fff;
-                padding: 1.5em;
-                text-align: center;
-                text-transform: uppercase;
-            }
-
-            .login__title {
-                font-size: 1rem;
-                margin: 0;
-            }
-
-            .login__body {
-                background-color: #fff;
-                padding: 1.5em;
-                position: relative;
-            }
-
-            .login__body::before {
-                background-color: #fff;
-                content: '';
-                height: 0.5em;
-                left: 50%;
-                margin-left: -0.25em;
-                margin-top: -0.25em;
-                position: absolute;
-                top: 0;
-                transform: rotate(45deg);
-                width: 0.5em;
-            }
-
-            .login input[type='email'],
-            .login input[type='password'] {
-                border: 0.0625em solid #e5e5e5;
-                padding: 1em 1.25em;
-            }
-
-            .login input[type='email'] {
-                border-top-left-radius: var(--loginInputBorderRadius);
-                border-top-right-radius: var(--loginInputBorderRadius);
-            }
-
-            .login input[type='password'] {
-                border-bottom-left-radius: var(--loginInputBorderRadius);
-                border-bottom-right-radius: var(--loginInputBorderRadius);
-                border-top: 0;
-            }
-
-            .login input[type='submit'] {
-                background-color: #1dabb8;
-                border-radius: var(--loginInputBorderRadius);
-                color: #fff;
-                font-weight: 700;
-                order: 1;
-                padding: 0.75em 1.25em;
-                transition: background-color 0.3s;
-            }
-
-            .login input[type='submit']:focus,
-            .login input[type='submit']:hover {
-                background-color: #198d98;
-            }
-
-            .login__footer {
-                align-items: center;
-                background-color: #fff;
-                border-bottom-left-radius: var(--loginBorderRadius);
-                border-bottom-right-radius: var(--loginBorderRadius);
-                display: flex;
-                justify-content: space-between;
-                padding-bottom: 1.5em;
-                padding-left: 1.5em;
-                padding-right: 1.5em;
-            }
-
-            .login__footer p {
-                margin: 0;
-            }
-
         </style>
+
     </head>
-    <body class="align">
 
-        <div class="grid">
+    <body>
+        <div class="login">
+            <div class="login-triangle"></div>
 
-            <form action="./validate_login" method="post" class="form login">
+            <h2 class="login-header">Login Sistem</h2>
 
-                <header class="login__header">
-                    <h3 class="login__title">Login Sistem</h3>
-                </header>
-
-                <div class="login__body">
-
-                    <div class="form__field">
-                        <input type="email" name="email_" placeholder="Email" required>
-                    </div>
-
-                    <div class="form__field">
-                        <input type="password" name="password_" placeholder="Password" required>
-                    </div>
-
-                </div>
-
-                <footer class="login__footer">
-                    <input type="submit" value="Login">
-
-                    <!--<p><span class="icon icon--info">?</span><a href="#">Forgot Password</a></p>-->
-                </footer>
-
+            <form class="login-container" method="POST" action="./validate_login">
+                <p><input type="email" name="email_" placeholder="user"></p>
+                <p><input type="password" name="password_" placeholder="pass"></p>
+                <p><input type="submit" value="Log in"></p>
             </form>
-
         </div>
-
     </body>
+
 </html>

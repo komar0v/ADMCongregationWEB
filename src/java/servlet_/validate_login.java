@@ -64,6 +64,11 @@ public class validate_login extends HttpServlet {
         processRequest(request, response);
         PrintWriter out = response.getWriter();
         
+        String email;
+        email=request.getParameter("email_");
+        
+        System.out.println(email);
+        
         
         
     }
