@@ -27,7 +27,6 @@ import kelasJava.koneksi_db;
 @WebServlet(name = "formAddMinatBakat_suster2", urlPatterns = {"/formAddMinatBakat_suster2"})
 public class formAddMinatBakat_suster2 extends HttpServlet {
 
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -72,9 +71,38 @@ public class formAddMinatBakat_suster2 extends HttpServlet {
                         + "        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n"
                         + "        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n"
                         + "\n"
+                        + "<style type=\"text/css\">\n"
+                        + "a {\n"
+                        + "  text-decoration: none;\n"
+                        + "  display: inline-block;\n"
+                        + "  padding: 8px 16px;\n"
+                        + "}\n"
+                        + "\n"
+                        + "a:hover {\n"
+                        + "  background-color: #ddd;\n"
+                        + "  color: black;\n"
+                        + "}\n"
+                        + "\n"
+                        + ".previous {\n"
+                        + "  background-color: #4CAF50;\n"
+                        + "  color: black;\n"
+                        + "}\n"
+                        + "\n"
+                        + ".next {\n"
+                        + "  background-color: #4CAF50;\n"
+                        + "  color: white;\n"
+                        + "}\n"
+                        + "\n"
+                        + ".round {\n"
+                        + "  border-radius: 50%;\n"
+                        + "}\n"
+                        + "</style>"
                         + "    </head>\n"
                         + "\n"
-                        + "    <body>\n"
+                        + "    <body>"
+                        + "<div class=\"row\">\n"
+                        + "<a class=\"previous\" href=\"./minatBakat_suster?id_suster="+datanya.getId_Suster()+"\">&#10094; KEMBALI</a>\n"
+                        + "</div>\n"
                         + "        <div class=\"container bootstrap snippet\">\n"
                         + "            <div class=\"row\">\n"
                         + "                <div class=\"col-sm-10\"><h1>Edit Data Suster</h1></div>\n"
@@ -85,7 +113,7 @@ public class formAddMinatBakat_suster2 extends HttpServlet {
                         + "\n"
                         + "\n"
                         + "                    <div class=\"text-center\">\n"
-                        + "                        <img src=\"getImagefromDB?id_suster="+datanya.getId_Suster()+"\"  height=\"200\" width=\"200\" >\n"
+                        + "                        <img src=\"getImagefromDB?id_suster=" + datanya.getId_Suster() + "\"  height=\"200\" width=\"200\" >\n"
                         + "\n"
                         + "                    </div><br>\n"
                         + "\n"
@@ -106,7 +134,7 @@ public class formAddMinatBakat_suster2 extends HttpServlet {
                         + "                                    \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n"
-                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\""+datanya.getId_Suster()+"\">\n"
+                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
                         + "                                </div>\n"
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
@@ -174,7 +202,7 @@ public class formAddMinatBakat_suster2 extends HttpServlet {
         } catch (Exception ex) {
             Logger.getLogger(minatBakat_suster.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     /**
