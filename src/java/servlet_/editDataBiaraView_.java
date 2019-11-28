@@ -101,7 +101,7 @@ public class editDataBiaraView_ extends HttpServlet {
                         + "            }\n"
                         + "\n"
                         + "            .previous {\n"
-                        + "                background-color: #f1f1f1;\n"
+                        + "                background-color: #4CAF50;\n"
                         + "                color: black;\n"
                         + "            }\n"
                         + "\n"
