@@ -4,20 +4,27 @@
     <head>
         <title>LOGIN</title>
         <style type="text/css">
-
-
             /* 'Open Sans' font from Google Fonts */
             @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
             body {
-                background: #456;
+                background: #F5F5F5;
                 font-family: 'Open Sans', sans-serif;
             }
+
+            .center {
+                line-height: 200px;
+                height: 200px;
+                text-align: center;
+                
+            }
+
 
             .login {
                 width: 400px;
                 margin: 16px auto;
                 font-size: 16px;
+                vertical-align: middle;
             }
 
             /* Reset top and bottom margins from certain elements */
@@ -33,11 +40,11 @@
                 margin-right: auto;
                 margin-left: auto;
                 border: 12px solid transparent;
-                border-bottom-color: #28d;
+                border-bottom-color: #4CAF50;
             }
 
             .login-header {
-                background: #28d;
+                background: #4CAF50;
                 padding: 20px;
                 font-size: 1.4em;
                 font-weight: normal;
@@ -82,7 +89,7 @@
             }
 
             .login input[type="submit"] {
-                background: #28d;
+                background: #4CAF50;
                 border-color: transparent;
                 color: #fff;
                 cursor: pointer;
@@ -101,17 +108,17 @@
     </head>
 
     <body>
+
         <div class="login">
             <div class="login-triangle"></div>
-
             <h2 class="login-header">Login Sistem</h2>
-
             <form class="login-container" method="POST" action="./validate_login">
                 <p><input type="email" name="email_" placeholder="user"></p>
                 <p><input type="password" name="password_" placeholder="pass"></p>
-                <p><input type="submit" value="Log in"></p>
+                <p><input type="submit" value="Log In"></p>
             </form>
         </div>
+
     </body>
 
 </html>
