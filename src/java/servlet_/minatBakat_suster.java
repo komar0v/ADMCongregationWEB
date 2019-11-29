@@ -57,7 +57,7 @@ public class minatBakat_suster extends HttpServlet {
             ResultSet rs2 = ps2.executeQuery();
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
-
+                
             }
             String minatBakat = "";
             if (rs2.next()) {
@@ -133,8 +133,8 @@ public class minatBakat_suster extends HttpServlet {
                         + "                        <li ><a href=\"./editSusterView_?id_suster=" + datanya.getId_Suster() + "\">Informasi Dasar</a></li>\n"
                         + "			   <li class=\"active\"><a href=\"#\">Minat Bakat</a></li>"
                         + "                        <li><a href=\"./riwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
-                        + "                        <li ><a href=\"./editDataBiaraView_?id_suster="+datanya.getId_Suster()+"\">Data Biara</a></li>"
-                        + "                        <li ><a href=\"./seminarYgPernahIkut_suster?id_suster="+datanya.getId_Suster()+"\">Data Seminar</a></li>\n"
+                        + "                        <li ><a href=\"./editDataBiaraView_?id_suster=" + datanya.getId_Suster() + "\">Data Biara</a></li>"
+                        + "                        <li ><a href=\"./seminarYgPernahIkut_suster?id_suster=" + datanya.getId_Suster() + "\">Data Seminar</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
@@ -144,7 +144,7 @@ public class minatBakat_suster extends HttpServlet {
                         + "                                    \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n"
-                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
+                        + "                                   <input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
                         + "                                </div>\n"
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"

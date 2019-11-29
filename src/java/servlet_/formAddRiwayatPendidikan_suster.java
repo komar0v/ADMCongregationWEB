@@ -46,7 +46,7 @@ public class formAddRiwayatPendidikan_suster extends HttpServlet {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
-
+                datanya.setNama_suster(rs.getString("nama_suster"));
             }
             try {
                 out.println("\n"
@@ -122,10 +122,14 @@ public class formAddRiwayatPendidikan_suster extends HttpServlet {
                         + "                            <form class=\"form\" action=\"./tambahRiwayatPendidikan_suster\" method=\"GET\" id=\"registrationForm\">\n"
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
+                        + "                                   <h4>Nama Suster</h4>\n"
+                        + "				      <input type=\"text\"  class=\"form-control\" name=\"temp_name\" readonly value=\"" + datanya.getNama_suster()+ "\">\n"
+                        + "                                </div>\n"
+                        + "                                <div class=\"form-group\">\n"
                         + "                                    <h4>NIK Suster</h4>\n"
                         + "                                    <input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
                         + "                                </div>\n"
-                        + "\n<hr><h4>Riwayat Pendidikan</h4>"
+                        + "\n<hr>                          <h4>Riwayat Pendidikan</h4>"
                         + "                                <div class=\"field_wrapper\">\n"
                         + "                                    <div>\n"
                         + "                                        <input type=\"text\" name=\"riwayatPendidikan1[]\" value=\"\" placeholder=\"jenjang\" size=\"10\"/>\n"
