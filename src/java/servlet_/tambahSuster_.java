@@ -120,6 +120,12 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt4.setString(20, "");
             prpStmt4.executeUpdate();
             prpStmt4.close();
+            
+            PreparedStatement prpStmt5 = con.prepareStatement("INSERT INTO seminar_suster VALUES(?,?)");
+            prpStmt5.setString(1, suster.getId_Suster());
+            prpStmt5.setString(2, "");
+            prpStmt5.executeUpdate();
+            prpStmt5.close();
 
             con.close();
 

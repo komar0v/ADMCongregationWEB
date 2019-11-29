@@ -134,6 +134,7 @@ public class minatBakat_suster extends HttpServlet {
                         + "			   <li class=\"active\"><a href=\"#\">Minat Bakat</a></li>"
                         + "                        <li><a href=\"./riwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
                         + "                        <li ><a href=\"./editDataBiaraView_?id_suster="+datanya.getId_Suster()+"\">Data Biara</a></li>"
+                        + "                        <li ><a href=\"./seminarYgPernahIkut_suster?id_suster="+datanya.getId_Suster()+"\">Data Seminar</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
