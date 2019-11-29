@@ -41,7 +41,14 @@ public class tambahSeminarYgPernahIkut_suster extends HttpServlet {
         String[] nama_seminar = request.getParameterValues("seminar_suster1[]");
         String[] nama_sertif_seminar = request.getParameterValues("seminar_suster2[]");
 
-        String seminarYgPernahikut_suster = "";
+        String namaseminarYgPernahikut_suster = "";
+        String namasertifnya = "";
+        
+        for (int i = 0; i < nama_seminar.length; i++) {
+            namaseminarYgPernahikut_suster = namaseminarYgPernahikut_suster + nama_seminar[i];
+            namasertifnya = namasertifnya + nama_sertif_seminar[i];
+            
+        }
         
         try {
             Connection con = koneksi_db.initializeDatabase();
@@ -50,16 +57,20 @@ public class tambahSeminarYgPernahIkut_suster extends HttpServlet {
             prpStmt.setString(1, idSuster);
 
             ResultSet rs = prpStmt.executeQuery();
-            String seminar = "";
+            String namaseminar = "";
+            String namasertif = "";
             if (rs.next()) {
-                seminar = rs.getString("seminar");
+                namaseminar = rs.getString("seminar");
+                namasertif = rs.getString("sertifikat");
             }
-            String seminar_updt = seminarYgPernahikut_suster + seminar;
+            String namaseminar_updt = namaseminarYgPernahikut_suster + namaseminar;
+            String sertifseminar_updt = namasertifnya + namasertif;
             con.close();
-            koneksi_db.updateSeminarYgPernahIkut(seminar_updt, idSuster);
+            koneksi_db.updateSeminarYgPernahIkut(namaseminar_updt, sertifseminar_updt, idSuster);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("./seminarYgPernahIkut_suster?id_suster=" + idSuster);
 
     }
 

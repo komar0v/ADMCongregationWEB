@@ -34,14 +34,17 @@ public class koneksi_db {
             PreparedStatement ps2 = con.prepareStatement("DELETE FROM minatbakat_suster WHERE id_suster=?");
             PreparedStatement ps3 = con.prepareStatement("DELETE FROM pendidikan_suster WHERE id_suster=?");
             PreparedStatement ps4 = con.prepareStatement("DELETE FROM databiara_suster WHERE id_suster=?");
+            PreparedStatement ps5 = con.prepareStatement("DELETE FROM seminar_suster WHERE id_suster=?");
             ps.setString(1, id);
             ps2.setString(1, id);
             ps3.setString(1, id);
             ps4.setString(1, id);
+            ps5.setString(1, id);
             
             ps2.executeUpdate();
             ps3.executeUpdate();
             ps4.executeUpdate();
+            ps5.executeUpdate();
             status = ps.executeUpdate();
 
             con.close();
@@ -82,12 +85,13 @@ public class koneksi_db {
         }
     }
     
-    public static void updateSeminarYgPernahIkut(String dataSeminar, String idSuster) {
+    public static void updateSeminarYgPernahIkut(String dataSeminar, String dataSeminar2, String idSuster) {
         try{
             Connection con3 = koneksi_db.initializeDatabase();
-            PreparedStatement prpStmt3 = con3.prepareStatement("UPDATE seminar_suster SET seminar=? WHERE id_suster=?");
+            PreparedStatement prpStmt3 = con3.prepareStatement("UPDATE seminar_suster SET seminar=?, sertifikat=? WHERE id_suster=?");
             prpStmt3.setString(1, dataSeminar);
-            prpStmt3.setString(2, idSuster);
+            prpStmt3.setString(2, dataSeminar2);
+            prpStmt3.setString(3, idSuster);
 
             prpStmt3.executeUpdate();
             con3.close();

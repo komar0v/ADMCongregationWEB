@@ -58,7 +58,7 @@ public class tambahMinatBakatSuster extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("./editSusterView_?id_suster=" + minatBakatnya.getId_suster());
+        response.sendRedirect("./minatBakat_suster?id_suster=" + minatBakatnya.getId_suster());
 
     }
 

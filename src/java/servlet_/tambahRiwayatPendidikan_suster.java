@@ -57,7 +57,7 @@ public class tambahRiwayatPendidikan_suster extends HttpServlet {
             e.printStackTrace();
         }
 
-        response.sendRedirect("./editSusterView_?id_suster=" + idSuster);
+        response.sendRedirect("./riwayatPendidikan_suster?id_suster=" + idSuster);
     }
 
     @Override

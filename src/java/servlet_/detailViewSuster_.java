@@ -64,15 +64,19 @@ public class detailViewSuster_ extends HttpServlet {
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
             PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
             PreparedStatement ps3 = conn.prepareStatement("SELECT * FROM pendidikan_suster WHERE id_suster=?");
+            PreparedStatement ps4 = conn.prepareStatement("SELECT * FROM seminar_suster WHERE id_suster=?");
+            
 
             String id_suster = request.getParameter("id_suster");
             ps.setString(1, id_suster);
             ps2.setString(1, id_suster);
             ps3.setString(1, id_suster);
+            ps4.setString(1, id_suster);
 
             ResultSet rs = ps.executeQuery();
             ResultSet rs2 = ps2.executeQuery();
             ResultSet rs3 = ps3.executeQuery();
+            ResultSet rs4 = ps4.executeQuery();
 
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
@@ -97,8 +101,18 @@ public class detailViewSuster_ extends HttpServlet {
             if (rs3.next()) {
                 riwayat_pendidikan = rs3.getString("pendidikan");
             }
-
             String arrRiwayatPendidikan[] = riwayat_pendidikan.split(",");
+            
+            String seminar_diikuti = "";
+            if (rs4.next()) {
+                seminar_diikuti = rs4.getString("seminar");
+            }
+            String arrSeminar[] = seminar_diikuti.split(",");
+            String arrNamaSertif[] = seminar_diikuti.split("_");
+            
+            for (int i = 0; i < arrSeminar.length; i++) {
+                    System.out.println(" W = "+arrSeminar[i]+"x"+arrNamaSertif[i]);
+                }
 
             try {
                 out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
