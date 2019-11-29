@@ -45,7 +45,7 @@ public class tambahSeminarYgPernahIkut_suster extends HttpServlet {
         String namasertifnya = "";
         
         for (int i = 0; i < nama_seminar.length; i++) {
-            namaseminarYgPernahikut_suster = namaseminarYgPernahikut_suster + namaseminarYgPernahikut_suster + " , ";
+            namaseminarYgPernahikut_suster = namaseminarYgPernahikut_suster + nama_seminar[i] + " , ";
             namasertifnya = namasertifnya + nama_sertif_seminar[i] + " , ";
             
         }

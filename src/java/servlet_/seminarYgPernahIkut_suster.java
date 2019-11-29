@@ -61,13 +61,10 @@ public class seminarYgPernahIkut_suster extends HttpServlet {
 
             }
             String seminar = "";
-//            String namasertif = "";
             if (rs2.next()) {
                 seminar = rs2.getString("seminar");
-//                namasertif = rs2.getString("sertifikat");
             }
             String arrSeminar[] = seminar.split(",");
-//            String arrSertifSeminar[] = namasertif.split(",");
 
             try {
                 out.println("<!DOCTYPE html>\n"

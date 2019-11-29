@@ -65,7 +65,6 @@ public class detailViewSuster_ extends HttpServlet {
             PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
             PreparedStatement ps3 = conn.prepareStatement("SELECT * FROM pendidikan_suster WHERE id_suster=?");
             PreparedStatement ps4 = conn.prepareStatement("SELECT * FROM seminar_suster WHERE id_suster=?");
-            
 
             String id_suster = request.getParameter("id_suster");
             ps.setString(1, id_suster);
@@ -102,17 +101,15 @@ public class detailViewSuster_ extends HttpServlet {
                 riwayat_pendidikan = rs3.getString("pendidikan");
             }
             String arrRiwayatPendidikan[] = riwayat_pendidikan.split(",");
-            
+
             String seminar_diikuti = "";
+            String nama_sertif_seminar = "";
             if (rs4.next()) {
                 seminar_diikuti = rs4.getString("seminar");
+                nama_sertif_seminar = rs4.getString("sertifikat");
             }
             String arrSeminar[] = seminar_diikuti.split(",");
-            String arrNamaSertif[] = seminar_diikuti.split("_");
-            
-            for (int i = 0; i < arrSeminar.length; i++) {
-                    System.out.println(" W = "+arrSeminar[i]+"x"+arrNamaSertif[i]);
-                }
+            String arrNamaSertif[] = nama_sertif_seminar.split(",");
 
             try {
                 out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
@@ -222,16 +219,17 @@ public class detailViewSuster_ extends HttpServlet {
                         + "        <!-- End 2nd Row -->\n"
                         + "        <!-- Begin 3rd Row -->\n"
                         + "        <div class=\"entry\">\n"
-                        + "          <h2>EXPERIENCE</h2>\n"
-                        + "          <div class=\"content\">\n"
-                        + "            <h3>May 2009 - Feb 2010</h3>\n"
-                        + "            <p>Agency Creative, London <br />\n"
-                        + "              <em>Senior Web Designer</em></p>\n"
-                        + "            <ul class=\"info\">\n"
-                        + "              <li>Vestibulum eu ante massa, sed rhoncus velit.</li>\n"
-                        + "              <li>Pellentesque at lectus in <a href=\"#\">libero dapibus</a> cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>\n"
-                        + "            </ul>\n"
-                        + "          </div>\n"
+                        + "          <h2>Seminar</h2>\n"
+                        + "          <div class=\"info\">\n");
+
+                for (int i = 0; i < arrSeminar.length - 1; i++) {
+                    
+                    out.println("<p>"+arrSeminar[i]+"<br/>\n"
+                            + "<em>"+arrNamaSertif[i]+"</em></p><br><br>");
+                    out.println("<br>");
+                }
+
+                out.println("        </div>\n"
                         + "          <div class=\"content\">\n"
                         + "            <h3>Jun 2007 - May 2009</h3>\n"
                         + "            <p>Junior Web Designer <br />\n"
@@ -248,7 +246,7 @@ public class detailViewSuster_ extends HttpServlet {
                         + "          <h2>MINAT & BAKAT</h2>\n"
                         + "          <div class=\"content\">\n"
                         + "            <h3>Keterampilan</h3>\n"
-                        + "            <ul class=\"skills\">\n");
+                        + "            <ul class=\"info\">\n");
                 for (int i = 0; i < arrMinatBakat.length; i++) {
                     out.println("<br><li>" + arrMinatBakat[i] + "</li><br>");
                 }
