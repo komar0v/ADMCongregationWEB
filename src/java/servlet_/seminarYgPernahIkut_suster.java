@@ -149,7 +149,7 @@ public class seminarYgPernahIkut_suster extends HttpServlet {
                         + "                                </div>\n"
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
-                        + "                       <hr><h4>Riwayat Pendidikan</h4> <div id=\"minat_bakat\">\n");
+                        + "                       <hr><h4>Seminar yang pernah diikuti</h4> <div id=\"minat_bakat\">\n");
                 for (int i = 0; i < arrSeminar.length - 1; i++) {
                     out.println("<br><li>" + arrSeminar[i] + "</li><br>");
                 }
@@ -161,7 +161,7 @@ public class seminarYgPernahIkut_suster extends HttpServlet {
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <div class=\"col-xs-12\">\n"
                         + "                                        <br>\n"
-                        + "<a href=\"./formAddRiwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">TAMBAH DATA</a>                                        "
+                        + "<a href=\"./formAddSeminar_suster?id_suster=" + datanya.getId_Suster() + "\">TAMBAH DATA</a>                                        "
                         + "<button class=\"button icon solid\" formaction=\"./#\" type=\"reset\"><i class=\"glyphicon glyphicon-edit\"></i> EDIT MINAT BAKAT</button>\n"
                         + "                                    </div>\n"
                         + "                                </div>\n"

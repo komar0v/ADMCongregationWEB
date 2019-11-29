@@ -141,7 +141,7 @@ public class editDataBiaraView_ extends HttpServlet {
                         + "                        <li ><a href=\"./minatBakat_suster?id_suster="+datanya.getId_suster()+"\">Minat Bakat</a></li>                \n"
                         + "                        <li ><a href=\"./riwayatPendidikan_suster?id_suster="+datanya.getId_suster()+"\">Riwayat Pendidikan</a></li>\n"
                         + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Data Biara</a></li>   \n"
-                        + "                        <li ><a href=\"./seminarYgPernahIkut_suster?id_suster="+datanya.getId_Suster()+"\">Data Seminar</a></li>\n"
+                        + "                        <li ><a href=\"./seminarYgPernahIkut_suster?id_suster="+datanya.getId_suster()+"\">Data Seminar</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
