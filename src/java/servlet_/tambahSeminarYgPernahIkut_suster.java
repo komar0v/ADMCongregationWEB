@@ -7,11 +7,15 @@ package servlet_;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import kelasJava.koneksi_db;
 
 /**
  *
@@ -19,32 +23,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "tambahSeminarYgPernahIkut_suster", urlPatterns = {"/tambahSeminarYgPernahIkut_suster"})
 public class tambahSeminarYgPernahIkut_suster extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet tambahSeminarYgPernahIkut_suster</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet tambahSeminarYgPernahIkut_suster at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -58,7 +36,31 @@ public class tambahSeminarYgPernahIkut_suster extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        String idSuster = request.getParameter("idSuster");
+        String[] nama_seminar = request.getParameterValues("seminar_suster1[]");
+        String[] nama_sertif_seminar = request.getParameterValues("seminar_suster2[]");
+
+        String seminarYgPernahikut_suster = "";
+        
+        try {
+            Connection con = koneksi_db.initializeDatabase();
+
+            PreparedStatement prpStmt = con.prepareStatement("SELECT * FROM seminar_suster WHERE id_suster=?");
+            prpStmt.setString(1, idSuster);
+
+            ResultSet rs = prpStmt.executeQuery();
+            String seminar = "";
+            if (rs.next()) {
+                seminar = rs.getString("seminar");
+            }
+            String seminar_updt = seminarYgPernahikut_suster + seminar;
+            con.close();
+            koneksi_db.updateSeminarYgPernahIkut(seminar_updt, idSuster);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
@@ -72,7 +74,6 @@ public class tambahSeminarYgPernahIkut_suster extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     /**

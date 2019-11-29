@@ -81,4 +81,19 @@ public class koneksi_db {
             e.printStackTrace();
         }
     }
+    
+    public static void updateSeminarYgPernahIkut(String dataSeminar, String idSuster) {
+        try{
+            Connection con3 = koneksi_db.initializeDatabase();
+            PreparedStatement prpStmt3 = con3.prepareStatement("UPDATE seminar_suster SET seminar=? WHERE id_suster=?");
+            prpStmt3.setString(1, dataSeminar);
+            prpStmt3.setString(2, idSuster);
+
+            prpStmt3.executeUpdate();
+            con3.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 }
