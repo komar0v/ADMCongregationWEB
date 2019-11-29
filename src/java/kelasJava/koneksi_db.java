@@ -32,9 +32,16 @@ public class koneksi_db {
             Connection con = koneksi_db.initializeDatabase();
             PreparedStatement ps = con.prepareStatement("DELETE FROM biodata_suster WHERE id_suster=?");
             PreparedStatement ps2 = con.prepareStatement("DELETE FROM minatbakat_suster WHERE id_suster=?");
+            PreparedStatement ps3 = con.prepareStatement("DELETE FROM pendidikan_suster WHERE id_suster=?");
+            PreparedStatement ps4 = con.prepareStatement("DELETE FROM databiara_suster WHERE id_suster=?");
             ps.setString(1, id);
             ps2.setString(1, id);
+            ps3.setString(1, id);
+            ps4.setString(1, id);
+            
             ps2.executeUpdate();
+            ps3.executeUpdate();
+            ps4.executeUpdate();
             status = ps.executeUpdate();
 
             con.close();
