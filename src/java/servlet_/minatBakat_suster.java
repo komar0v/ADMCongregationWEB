@@ -149,7 +149,7 @@ public class minatBakat_suster extends HttpServlet {
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
                         + "                       <hr><h4>Minat & Bakat</h4> <div id=\"minat_bakat\">\n");
-                for (int i = 1; i < arrMinatBakat.length; i++) {
+                for (int i = 0; i < arrMinatBakat.length-1; i++) {
                     out.println("<br><li>" + arrMinatBakat[i] + "</li><br>");
                 }
 

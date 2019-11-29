@@ -249,7 +249,7 @@ public class detailViewSuster_ extends HttpServlet {
                         + "          <div class=\"content\">\n"
                         + "            <h3>Keterampilan</h3>\n"
                         + "            <ul class=\"skills\">\n");
-                for (int i = 1; i < arrMinatBakat.length; i++) {
+                for (int i = 0; i < arrMinatBakat.length; i++) {
                     out.println("<br><li>" + arrMinatBakat[i] + "</li><br>");
                 }
                 out.println("          </ul>\n"

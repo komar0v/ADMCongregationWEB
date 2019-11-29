@@ -33,7 +33,7 @@ public class tambahMinatBakatSuster extends HttpServlet {
         String list_minatBakat = "";
 
         for (int i = 0; i < minatBakat.length; i++) {
-            list_minatBakat = list_minatBakat + " , " + minatBakat[i];
+            list_minatBakat = list_minatBakat + minatBakat[i] + " , ";
         }
         minatBakat_suster minatBakatnya = new minatBakat_suster();
         
