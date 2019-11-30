@@ -130,6 +130,7 @@ public class formAddRiwayatPendidikan_suster extends HttpServlet {
                         + "                                    <input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
                         + "                                </div>\n"
                         + "\n<hr>                          <h4>Riwayat Pendidikan</h4>"
+                        + "                                <h5>Jangan masukkan tanda koma (,) didalam kotak.</h5>"
                         + "                                <div class=\"field_wrapper\">\n"
                         + "                                    <div>\n"
                         + "                                        <input type=\"text\" name=\"riwayatPendidikan1[]\" value=\"\" placeholder=\"jenjang\" size=\"10\"/>\n"

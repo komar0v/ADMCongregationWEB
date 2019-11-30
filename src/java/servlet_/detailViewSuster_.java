@@ -230,15 +230,6 @@ public class detailViewSuster_ extends HttpServlet {
                 }
 
                 out.println("        </div>\n"
-                        + "          <div class=\"content\">\n"
-                        + "            <h3>Jun 2007 - May 2009</h3>\n"
-                        + "            <p>Junior Web Designer <br />\n"
-                        + "              <em>Bachelor of Science in Graphic Design</em></p>\n"
-                        + "            <ul class=\"info\">\n"
-                        + "              <li>Sed fermentum sollicitudin interdum. Etiam imperdiet sapien in dolor rhoncus a semper tortor posuere. </li>\n"
-                        + "              <li>Pellentesque at lectus in libero dapibus cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>\n"
-                        + "            </ul>\n"
-                        + "          </div>\n"
                         + "        </div>\n"
                         + "        <!-- End 3rd Row -->\n"
                         + "        <!-- Begin 4th Row -->\n"
