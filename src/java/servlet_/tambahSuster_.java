@@ -127,6 +127,81 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt5.setString(3, "");
             prpStmt5.executeUpdate();
             prpStmt5.close();
+            
+            PreparedStatement prpStmt6 = con.prepareStatement("INSERT INTO catatanpribadi_novis_satu_notes VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            prpStmt6.setString(1, suster.getId_Suster());
+            prpStmt6.setString(2, "");
+            prpStmt6.setString(3, "");
+            prpStmt6.setString(4, "");
+            prpStmt6.setString(5, "");
+            prpStmt6.setString(6, "");
+            prpStmt6.setString(7, "");
+            prpStmt6.setString(8, "");
+            prpStmt6.setString(9, "");
+            prpStmt6.setString(10, "");
+            prpStmt6.setString(11, "");
+            prpStmt6.executeUpdate();
+            prpStmt6.close();
+            
+            PreparedStatement prpStmt7 = con.prepareStatement("INSERT INTO catatanpribadi_novis_dua_notes VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            prpStmt7.setString(1, suster.getId_Suster());
+            prpStmt7.setString(2, "");
+            prpStmt7.setString(3, "");
+            prpStmt7.setString(4, "");
+            prpStmt7.setString(5, "");
+            prpStmt7.setString(6, "");
+            prpStmt7.setString(7, "");
+            prpStmt7.setString(8, "");
+            prpStmt7.setString(9, "");
+            prpStmt7.setString(10, "");
+            prpStmt7.setString(11, "");
+            prpStmt7.executeUpdate();
+            prpStmt7.close();
+            
+            PreparedStatement prpStmt8 = con.prepareStatement("INSERT INTO catatanpribadi_yunior_satu_notes VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            prpStmt8.setString(1, suster.getId_Suster());
+            prpStmt8.setString(2, "");
+            prpStmt8.setString(3, "");
+            prpStmt8.setString(4, "");
+            prpStmt8.setString(5, "");
+            prpStmt8.setString(6, "");
+            prpStmt8.setString(7, "");
+            prpStmt8.setString(8, "");
+            prpStmt8.setString(9, "");
+            prpStmt8.setString(10, "");
+            prpStmt8.setString(11, "");
+            prpStmt8.executeUpdate();
+            prpStmt8.close();
+            
+            PreparedStatement prpStmt9 = con.prepareStatement("INSERT INTO catatanpribadi_yunior_dua_notes VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            prpStmt9.setString(1, suster.getId_Suster());
+            prpStmt9.setString(2, "");
+            prpStmt9.setString(3, "");
+            prpStmt9.setString(4, "");
+            prpStmt9.setString(5, "");
+            prpStmt9.setString(6, "");
+            prpStmt9.setString(7, "");
+            prpStmt9.setString(8, "");
+            prpStmt9.setString(9, "");
+            prpStmt9.setString(10, "");
+            prpStmt9.setString(11, "");
+            prpStmt9.executeUpdate();
+            prpStmt9.close();
+            
+            PreparedStatement prpStmt10 = con.prepareStatement("INSERT INTO catatanpribadi_yunior_tiga_notes VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            prpStmt10.setString(1, suster.getId_Suster());
+            prpStmt10.setString(2, "");
+            prpStmt10.setString(3, "");
+            prpStmt10.setString(4, "");
+            prpStmt10.setString(5, "");
+            prpStmt10.setString(6, "");
+            prpStmt10.setString(7, "");
+            prpStmt10.setString(8, "");
+            prpStmt10.setString(9, "");
+            prpStmt10.setString(10, "");
+            prpStmt10.setString(11, "");
+            prpStmt10.executeUpdate();
+            prpStmt10.close();
 
             con.close();
 

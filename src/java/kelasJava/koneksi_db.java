@@ -35,16 +35,32 @@ public class koneksi_db {
             PreparedStatement ps3 = con.prepareStatement("DELETE FROM pendidikan_suster WHERE id_suster=?");
             PreparedStatement ps4 = con.prepareStatement("DELETE FROM databiara_suster WHERE id_suster=?");
             PreparedStatement ps5 = con.prepareStatement("DELETE FROM seminar_suster WHERE id_suster=?");
+            PreparedStatement ps6 = con.prepareStatement("DELETE FROM catatanpribadi_novis_satu_notes WHERE id_suster=?");
+            PreparedStatement ps7 = con.prepareStatement("DELETE FROM catatanpribadi_novis_dua_notes WHERE id_suster=?");
+            PreparedStatement ps8 = con.prepareStatement("DELETE FROM catatanpribadi_yunior_satu_notes WHERE id_suster=?");
+            PreparedStatement ps9 = con.prepareStatement("DELETE FROM catatanpribadi_yunior_dua_notes WHERE id_suster=?");
+            PreparedStatement ps10 = con.prepareStatement("DELETE FROM catatanpribadi_yunior_dua_notes WHERE id_suster=?");
+            
             ps.setString(1, id);
             ps2.setString(1, id);
             ps3.setString(1, id);
             ps4.setString(1, id);
             ps5.setString(1, id);
+            ps6.setString(1, id);
+            ps7.setString(1, id);
+            ps8.setString(1, id);
+            ps9.setString(1, id);
+            ps10.setString(1, id);
             
             ps2.executeUpdate();
             ps3.executeUpdate();
             ps4.executeUpdate();
             ps5.executeUpdate();
+            ps6.executeUpdate();
+            ps7.executeUpdate();
+            ps8.executeUpdate();
+            ps9.executeUpdate();
+            ps10.executeUpdate();
             status = ps.executeUpdate();
 
             con.close();
