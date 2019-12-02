@@ -141,7 +141,7 @@ public class seminarYgPernahIkut_suster extends HttpServlet {
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
-                        + "                            <hr>\n"
+                        + "                            \n"
                         + "                                    \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n"

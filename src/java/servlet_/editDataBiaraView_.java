@@ -147,7 +147,7 @@ public class editDataBiaraView_ extends HttpServlet {
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
-                        + "                            <hr>\n"
+                        + "                           \n"
                         + "                            <form class=\"form\" action=\"./editDataBiaraLakukanPerubahan_\" method=\"POST\" id=\"registrationForm\">\n"
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
