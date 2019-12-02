@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,39 +12,39 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<style type="text/css">
-a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
+        <style type="text/css">
+            a {
+                text-decoration: none;
+                display: inline-block;
+                padding: 8px 16px;
+            }
 
-a:hover {
-  background-color: #ddd;
-  color: black;
-}
+            a:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
-.previous {
-  background-color: #4CAF50;
-  color: black;
-}
+            .previous {
+                background-color: #4CAF50;
+                color: black;
+            }
 
-.next {
-  background-color: #4CAF50;
-  color: white;
-}
+            .next {
+                background-color: #4CAF50;
+                color: white;
+            }
 
-.round {
-  border-radius: 50%;
-}
-</style>    </head>
+            .round {
+                border-radius: 50%;
+            }
+        </style>    </head>
 
     <body>
-<div class="row">
-<a class="previous" href="./riwayatPendidikan_suster?id_suster=#">&#10094; KEMBALI</a>
-</div>        <div class="container bootstrap snippet">
+        <div class="row">
+            <a class="previous" href="./seminarYgPernahIkut_suster?id_suster=#">&#10094; KEMBALI</a>
+        </div>        <div class="container bootstrap snippet">
             <div class="row">
-                <div class="col-sm-10"><h1>Edit Data Suster</h1></div>
+                <div class="col-sm-10"><h1>Data Catatan Pribadi</h1></div>
 
             </div>
             <div class="row">
@@ -68,11 +69,17 @@ a:hover {
                             <form class="form" action="./tambahSeminarYgPernahIkut_suster" method="GET" id="registrationForm">
 
                                 <div class="form-group">
+                                    <h4>Nama Suster</h4>
+                                    <input type="text"  class="form-control" name="temp_name" readonly value="">
+                                </div>
+                                <div class="form-group">
                                     <h4>NIK Suster</h4>
-                                    <input type="text"  class="form-control" name="idSuster" readonly value="#">
+                                    <input type="text"  class="form-control" name="idSuster" readonly value="">
                                 </div>
 
-                                <hr><h4>Seminar yang pernah diikuti</h4>                                <div class="field_wrapper">
+                                <hr><h4>Teks nanti disini</h4>                                    
+                                <h5>Teks nanti disini</h5>                                
+                                <div class="field_wrapper">
                                     <div>
                                         <input type="text" name="seminar_suster1[]" value="" placeholder="nama seminar" size="30"/>
                                         <input type="text" name="seminar_suster2[]" value="" placeholder="nama sertifikat yang diterima" size="30"/>
@@ -96,37 +103,8 @@ a:hover {
                 </div><!--/col-9-->
             </div><!--/row-->
         </div>
-        <script>
-            $(".custom-file-input").on("change", function () {
-                var fileName = $(this).val().split("\\").pop();
-                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-            });
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var maxField = 10; //Input fields increment limitation
-                var addButton = $('.add_button'); //Add button selector
-                var wrapper = $('.field_wrapper'); 
-                var fieldHTML = '<div><input type="text" name="seminar_suster1[]" value="" placeholder="nama seminar" size="30"/> <input type="text" name="seminar_suster2[]" value="" placeholder="nama sertifikat yang diterima" size="30"/><a href="javascript:void(0);" class="remove_button"><img src="https://img.icons8.com/pastel-glyph/64/000000/minus.png" width="25" height="25"></a></div>';
-                var x = 1; //Initial field counter is 1
 
-                //Once add button is clicked
-                $(addButton).click(function () {
-                    //Check maximum number of input fields
-                    if (x < maxField) {
-                        x++; //Increment field counter
-                        $(wrapper).append(fieldHTML); //Add field html
-                    }
-                });
-
-                //Once remove button is clicked
-                $(wrapper).on('click', '.remove_button', function (e) {
-                    e.preventDefault();
-                    $(this).parent('div').remove(); //Remove field html
-                    x--; //Decrement field counter
-                });
-            });
-        </script>
     </body>
 
 </html>
+
