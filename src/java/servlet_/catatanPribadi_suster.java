@@ -128,7 +128,7 @@ public class catatanPribadi_suster extends HttpServlet {
                         + "                                    <h5>Klik salah satu link untuk masuk ke bagian catatan pribadi</h5>                                \n"
                         + "                                    <div class=\"field_wrapper\">\n"
                         + "                                        <div>\n"
-                        + "                                            <center><a class=\"next\" href=\"./=#\">&#8811; CATATAN NOVIS&nbsp;&nbsp;</a></center>\n"
+                        + "                                            <center><a class=\"next\" href=\"./catPribadi_novis_satu_postulan_satu?id_suster="+idnyaSuster+"\">&#8811; CATATAN NOVIS&nbsp;&nbsp;</a></center>\n"
                         + "                                            <br>\n"
                         + "                                            <center><a class=\"next\" href=\"./=#\">&#8811; CATATAN YUNIOR</a></center>\n"
                         + "\n"
