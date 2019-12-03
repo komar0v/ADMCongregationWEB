@@ -25,8 +25,8 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "catPribadi_novis_satu_postulan_satu", urlPatterns = {"/catPribadi_novis_satu_postulan_satu"})
-public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
+@WebServlet(name = "catPribadi_novis_satu_postulan_dua", urlPatterns = {"/catPribadi_novis_satu_postulan_dua"})
+public class catPribadi_novis_satu_postulan_dua extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -56,7 +56,7 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
             }
 
             if (rs2.next()) {
-                catatan.setCatatans(rs2.getString("postulan1"));
+                catatan.setCatatans(rs2.getString("postulan2"));
             }
 
             try {
@@ -127,8 +127,8 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                         + "                        \n"
                         + "                    </ul>\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 1</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_dua?id_suster="+datanya.getId_Suster()+"\">POSTULAN 2</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_satu?id_suster="+datanya.getId_Suster()+"\">POSTULAN 1</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 2</a></li>\n"
                         + "                        <li ><a href=\"#\">POSTULAN 3</a></li>\n"
                         + "                        <li ><a href=\"#\">POSTULAN 4</a></li>\n"
                         + "                        <li ><a href=\"#\">POSTULAN 5</a></li>\n"
@@ -188,9 +188,8 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                 out.close();
             }
         } catch (Exception ex) {
-            Logger.getLogger(catPribadi_novis_satu_postulan_satu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(catPribadi_novis_satu_postulan_dua.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     /**
@@ -204,7 +203,6 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     /**
