@@ -25,9 +25,20 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "catPribadi_novis_satu_postulan_satu", urlPatterns = {"/catPribadi_novis_satu_postulan_satu"})
-public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
+@WebServlet(name = "catPribadi_novis_satu_postulan_tiga", urlPatterns = {"/catPribadi_novis_satu_postulan_tiga"})
+public class catPribadi_novis_satu_postulan_tiga extends HttpServlet {
 
+    
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -56,7 +67,7 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
             }
 
             if (rs2.next()) {
-                catatan.setCatatans(rs2.getString("postulan1"));
+                catatan.setCatatans(rs2.getString("postulan3"));
             }
 
             try {
@@ -127,9 +138,9 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                         + "                        \n"
                         + "                    </ul>\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 1</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_satu?id_suster="+datanya.getId_Suster()+"\">POSTULAN 1</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_dua?id_suster="+datanya.getId_Suster()+"\">POSTULAN 2</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_tiga?id_suster="+datanya.getId_Suster()+"\">POSTULAN 3</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 3</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_empat?id_suster="+datanya.getId_Suster()+"\">POSTULAN 4</a></li>\n"
                         + "                        <li ><a href=\"#\">POSTULAN 5</a></li>\n"
                         + "                        <li ><a href=\"#\">POSTULAN 6</a></li>\n"
@@ -142,7 +153,7 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
-                        + "                            <form class=\"form\" action=\"./catPribadi_novis_satu_postulan_satu_save\" method=\"POST\" id=\"registrationForm\">\n"
+                        + "                            <form class=\"form\" action=\"./catPribadi_novis_satu_postulan_tiga_save\" method=\"POST\" id=\"registrationForm\">\n"
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <h4>Nama Suster</h4>\n"
@@ -188,9 +199,8 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                 out.close();
             }
         } catch (Exception ex) {
-            Logger.getLogger(catPribadi_novis_satu_postulan_satu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(catPribadi_novis_satu_postulan_tiga.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     /**
@@ -204,7 +214,6 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     /**
