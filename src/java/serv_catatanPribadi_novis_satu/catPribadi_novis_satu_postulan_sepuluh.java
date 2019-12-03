@@ -25,8 +25,8 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "catPribadi_novis_satu_postulan_empat", urlPatterns = {"/catPribadi_novis_satu_postulan_empat"})
-public class catPribadi_novis_satu_postulan_empat extends HttpServlet {
+@WebServlet(name = "catPribadi_novis_satu_postulan_sepuluh", urlPatterns = {"/catPribadi_novis_satu_postulan_sepuluh"})
+public class catPribadi_novis_satu_postulan_sepuluh extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -65,7 +65,7 @@ public class catPribadi_novis_satu_postulan_empat extends HttpServlet {
             }
 
             if (rs2.next()) {
-                catatan.setCatatans(rs2.getString("postulan4"));
+                catatan.setCatatans(rs2.getString("postulan10"));
             }
 
             try {
@@ -139,19 +139,19 @@ public class catPribadi_novis_satu_postulan_empat extends HttpServlet {
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_satu?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 1</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_dua?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 2</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_tiga?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 3</a></li>\n"
-                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 4</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_empat?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 4</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_lima?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 5</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_enam?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 6</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_tujuh?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 7</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_delapan?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 8</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_sembilan?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 9</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_sepuluh?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 10</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 10</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
-                        + "                            <form class=\"form\" action=\"./catPribadi_novis_satu_postulan_empat_save\" method=\"POST\" id=\"registrationForm\">\n"
+                        + "                            <form class=\"form\" action=\"./catPribadi_novis_satu_postulan_sepuluh_save\" method=\"POST\" id=\"registrationForm\">\n"
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <h4>Nama Suster</h4>\n"
@@ -197,7 +197,7 @@ public class catPribadi_novis_satu_postulan_empat extends HttpServlet {
                 out.close();
             }
         } catch (Exception ex) {
-            Logger.getLogger(catPribadi_novis_satu_postulan_empat.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(catPribadi_novis_satu_postulan_sepuluh.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -212,7 +212,6 @@ public class catPribadi_novis_satu_postulan_empat extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     /**
