@@ -296,7 +296,7 @@ public class showSuster_ extends HttpServlet {
                 output.println("<tr>" + "<td>" + urutan + "</td>" + "<td>" + data.getId_Suster() + "</td><td>" + nama_asal_suster + "</td><td>" + nama_suster + "</td>"
                         + "<td>\n"
                         + "							<a href=\"detailViewSuster_?id_suster=" + data.getId_Suster() + "\" class=\"view\" title=\"View\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE417;</i></a>\n"
-                        + "                            <a href=\"#\" class=\"edit\" title=\"Edit\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE254;</i></a>\n"
+                        + "                            <a href=\"editSusterView_?id_suster=" + data.getId_Suster() + "\" class=\"edit\" title=\"Edit\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE254;</i></a>\n"
                         + "                            <a href=\"hapusSuster_?id_suster=" + data.getId_Suster() + "\" class=\"delete\" title=\"Delete\" data-toggle=\"tooltip\"><i class=\"material-icons\">&#xE872;</i></a>\n"
                         + "                        </td></tr>");
 
