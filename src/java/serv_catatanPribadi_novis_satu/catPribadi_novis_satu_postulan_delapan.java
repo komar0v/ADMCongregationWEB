@@ -132,7 +132,7 @@ public class catPribadi_novis_satu_postulan_delapan extends HttpServlet {
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Novis 1</a></li>\n"
-                        + "                        <li ><a data-toggle=\"tab\" href=\"./catPribadi_novis_dua_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Novis 2</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Novis 2</a></li>\n"
                         + "                        \n"
                         + "                        \n"
                         + "                    </ul>\n"

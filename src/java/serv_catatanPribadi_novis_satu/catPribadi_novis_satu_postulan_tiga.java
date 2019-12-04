@@ -28,8 +28,6 @@ import kelasJava.koneksi_db;
 @WebServlet(name = "catPribadi_novis_satu_postulan_tiga", urlPatterns = {"/catPribadi_novis_satu_postulan_tiga"})
 public class catPribadi_novis_satu_postulan_tiga extends HttpServlet {
 
-    
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -133,7 +131,7 @@ public class catPribadi_novis_satu_postulan_tiga extends HttpServlet {
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Novis 1</a></li>\n"
-                        + "                        <li ><a data-toggle=\"tab\" href=\"#\">Novis 2</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Novis 2</a></li>\n"
                         + "                        \n"
                         + "                        \n"
                         + "                    </ul>\n"
@@ -141,13 +139,13 @@ public class catPribadi_novis_satu_postulan_tiga extends HttpServlet {
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_satu?id_suster="+datanya.getId_Suster()+"\">POSTULAN 1</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_dua?id_suster="+datanya.getId_Suster()+"\">POSTULAN 2</a></li>\n"
                         + "                        <li class=\"active\"><a href=\"#\">POSTULAN 3</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_empat?id_suster="+datanya.getId_Suster()+"\">POSTULAN 4</a></li>\n"
-                        + "                        <li ><a href=\"#\">POSTULAN 5</a></li>\n"
-                        + "                        <li ><a href=\"#\">POSTULAN 6</a></li>\n"
-                        + "                        <li ><a href=\"#\">POSTULAN 7</a></li>\n"
-                        + "                        <li ><a href=\"#\">POSTULAN 8</a></li>\n"
-                        + "                        <li ><a href=\"#\">POSTULAN 9</a></li>\n"
-                        + "                        <li ><a href=\"#\">POSTULAN 10</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_empat?id_suster="+datanya.getId_Suster()+"\">POSTULAN 4</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_lima?id_suster="+datanya.getId_Suster()+"\">POSTULAN 5</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_enam?id_suster="+datanya.getId_Suster()+"\">POSTULAN 6</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_tujuh?id_suster="+datanya.getId_Suster()+"\">POSTULAN 7</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_delapan?id_suster="+datanya.getId_Suster()+"\">POSTULAN 8</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_sembilan?id_suster="+datanya.getId_Suster()+"\">POSTULAN 9</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_sepuluh?id_suster="+datanya.getId_Suster()+"\">POSTULAN 10</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
