@@ -127,7 +127,7 @@ public class catPribadi_novis_satu_postulan_sepuluh extends HttpServlet {
                         + "\n"
                         + "                    </div><br>\n"
                         + "\n"
-                        + "                </div><!--/col-3-->\n"
+                        + "                </div>\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Novis 1</a></li>\n"
