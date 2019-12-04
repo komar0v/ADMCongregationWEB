@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package serv_catatanPribadi_novis_satu;
+package serv_catatanPribadi_novis_dua;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,8 +25,8 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "catPribadi_novis_satu_postulan_satu", urlPatterns = {"/catPribadi_novis_satu_postulan_satu"})
-public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
+@WebServlet(name = "catPribadi_novis_dua_postulan_satu", urlPatterns = {"/catPribadi_novis_dua_postulan_satu"})
+public class catPribadi_novis_dua_postulan_satu extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,7 +41,7 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
             Connection conn = koneksi_db.initializeDatabase();
 
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
-            PreparedStatement ps2 = conn.prepareStatement("SELECT * from catatanpribadi_novis_satu_notes WHERE id_suster=?");
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * from catatanpribadi_novis_dua_notes WHERE id_suster=?");
 
             String idnyaSuster = request.getParameter("id_suster");
             ps.setString(1, idnyaSuster);
@@ -121,14 +121,14 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                         + "                </div><!--/col-3-->\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Novis 1</a></li>\n"
-                        + "                        <li ><a data-toggle=\"tab\" href=\"./catPribadi_novis_dua_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Novis 2</a></li>\n"
+                        + "                        <li ><a data-toggle=\"tab\" href=\"./catPribadi_novis_satu_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Novis 1</a></li>\n"
+                        + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Novis 2</a></li>\n"
                         + "                        \n"
                         + "                        \n"
                         + "                    </ul>\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li class=\"active\"><a href=\"#\">POSTULAN 1</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_dua?id_suster="+datanya.getId_Suster()+"\">POSTULAN 2</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_dua?id_suster="+datanya.getId_Suster()+"\">POSTULAN 2</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_tiga?id_suster="+datanya.getId_Suster()+"\">POSTULAN 3</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_empat?id_suster="+datanya.getId_Suster()+"\">POSTULAN 4</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_lima?id_suster="+datanya.getId_Suster()+"\">POSTULAN 5</a></li>\n"
@@ -142,7 +142,7 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
-                        + "                            <form class=\"form\" action=\"./catPribadi_novis_satu_postulan_satu_save\" method=\"POST\" id=\"registrationForm\">\n"
+                        + "                            <form class=\"form\" action=\"./catPribadi_novis_dua_postulan_satu_save\" method=\"POST\" id=\"registrationForm\">\n"
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <h4>Nama Suster</h4>\n"
@@ -188,23 +188,14 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                 out.close();
             }
         } catch (Exception ex) {
-            Logger.getLogger(catPribadi_novis_satu_postulan_satu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(catPribadi_novis_dua_postulan_satu.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
     }
 
     /**
