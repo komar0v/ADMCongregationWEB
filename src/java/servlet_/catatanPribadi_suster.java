@@ -130,7 +130,7 @@ public class catatanPribadi_suster extends HttpServlet {
                         + "                                        <div>\n"
                         + "                                            <center><a class=\"next\" href=\"./catPribadi_novis_satu_postulan_satu?id_suster="+idnyaSuster+"\">&#8811; CATATAN NOVIS&nbsp;&nbsp;</a></center>\n"
                         + "                                            <br>\n"
-                        + "                                            <center><a class=\"next\" href=\"./=#\">&#8811; CATATAN YUNIOR</a></center>\n"
+                        + "                                            <center><a class=\"next\" href=\"./catPribadi_yunior_satu_postulan_satu?id_suster="+idnyaSuster+"\">&#8811; CATATAN YUNIOR</a></center>\n"
                         + "\n"
                         + "\n"
                         + "                                        </div>\n"
