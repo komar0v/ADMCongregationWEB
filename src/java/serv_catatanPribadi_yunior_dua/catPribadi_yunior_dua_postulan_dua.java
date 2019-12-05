@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package serv_catatanPribadi_yunior_satu;
+package serv_catatanPribadi_yunior_dua;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,8 +25,8 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "catPribadi_yunior_satu_postulan_satu", urlPatterns = {"/catPribadi_yunior_satu_postulan_satu"})
-public class catPribadi_yunior_satu_postulan_satu extends HttpServlet {
+@WebServlet(name = "catPribadi_yunior_dua_postulan_dua", urlPatterns = {"/catPribadi_yunior_dua_postulan_dua"})
+public class catPribadi_yunior_dua_postulan_dua extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -50,7 +50,7 @@ public class catPribadi_yunior_satu_postulan_satu extends HttpServlet {
             Connection conn = koneksi_db.initializeDatabase();
 
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
-            PreparedStatement ps2 = conn.prepareStatement("SELECT * from catatanpribadi_yunior_satu_notes WHERE id_suster=?");
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * from catatanpribadi_yunior_dua_notes WHERE id_suster=?");
 
             String idnyaSuster = request.getParameter("id_suster");
             ps.setString(1, idnyaSuster);
@@ -65,7 +65,7 @@ public class catPribadi_yunior_satu_postulan_satu extends HttpServlet {
             }
 
             if (rs2.next()) {
-                catatan.setCatatans(rs2.getString("postulan1"));
+                catatan.setCatatans(rs2.getString("postulan2"));
             }
 
             try {
@@ -130,29 +130,29 @@ public class catPribadi_yunior_satu_postulan_satu extends HttpServlet {
                         + "                </div><!--/col-3-->\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li class=\"active\"><a href=\"#\">Yunior 1</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Yunior 2</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Yunior 1</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\">Yunior 2</a></li>\n"
                                 + "                <li ><a href=\"#\">Yunior 3</a></li>"
                         + "                        \n"
                         + "                        \n"
                         + "                    </ul>\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 1</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_dua?id_suster="+datanya.getId_Suster()+"\">POSTULAN 2</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_tiga?id_suster="+datanya.getId_Suster()+"\">POSTULAN 3</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_empat?id_suster="+datanya.getId_Suster()+"\">POSTULAN 4</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_lima?id_suster="+datanya.getId_Suster()+"\">POSTULAN 5</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_enam?id_suster="+datanya.getId_Suster()+"\">POSTULAN 6</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_tujuh?id_suster="+datanya.getId_Suster()+"\">POSTULAN 7</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_delapan?id_suster="+datanya.getId_Suster()+"\">POSTULAN 8</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_sembilan?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 9</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_sepuluh?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 10</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_satu?id_suster="+datanya.getId_Suster()+"\">POSTULAN 1</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"\">POSTULAN 2</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_tiga?id_suster="+datanya.getId_Suster()+"\">POSTULAN 3</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_empat?id_suster="+datanya.getId_Suster()+"\">POSTULAN 4</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_lima?id_suster="+datanya.getId_Suster()+"\">POSTULAN 5</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_enam?id_suster="+datanya.getId_Suster()+"\">POSTULAN 6</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_tujuh?id_suster="+datanya.getId_Suster()+"\">POSTULAN 7</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_delapan?id_suster="+datanya.getId_Suster()+"\">POSTULAN 8</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_sembilan?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 9</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_dua_postulan_sepuluh?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 10</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
-                        + "                            <form class=\"form\" action=\"./catPribadi_yunior_satu_postulan_satu_save\" method=\"POST\" id=\"registrationForm\">\n"
+                        + "                            <form class=\"form\" action=\"./catPribadi_yunior_dua_postulan_dua_save\" method=\"POST\" id=\"registrationForm\">\n"
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <h4>Nama Suster</h4>\n"
@@ -198,7 +198,7 @@ public class catPribadi_yunior_satu_postulan_satu extends HttpServlet {
                 out.close();
             }
         } catch (Exception ex) {
-            Logger.getLogger(catPribadi_yunior_satu_postulan_satu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(catPribadi_yunior_dua_postulan_dua.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -213,7 +213,6 @@ public class catPribadi_yunior_satu_postulan_satu extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
     }
 
     /**
