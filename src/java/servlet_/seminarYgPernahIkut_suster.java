@@ -163,7 +163,7 @@ public class seminarYgPernahIkut_suster extends HttpServlet {
                         + "                                    <div class=\"col-xs-12\">\n"
                         + "                                        <br>\n"
                         + "<a href=\"./formAddSeminar_suster?id_suster=" + datanya.getId_Suster() + "\">TAMBAH DATA</a>                                        "
-                        + "<button class=\"button icon solid\" formaction=\"./#\" type=\"reset\"><i class=\"glyphicon glyphicon-edit\"></i> EDIT MINAT BAKAT</button>\n"
+                        + "<a href=\"./editSeminar_suster?id_suster=" + datanya.getId_Suster() + "\">EDIT DATA</a>\n"
                         + "                                    </div>\n"
                         + "                                </div>\n"
                         + "                            <hr>\n"
