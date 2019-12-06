@@ -25,8 +25,9 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "catPribadi_yunior_tiga_postulan_empat", urlPatterns = {"/catPribadi_yunior_tiga_postulan_empat"})
-public class catPribadi_yunior_tiga_postulan_empat extends HttpServlet {
+@WebServlet(name = "catPribadi_yunior_tiga_postulan_lima", urlPatterns = {"/catPribadi_yunior_tiga_postulan_lima"})
+public class catPribadi_yunior_tiga_postulan_lima extends HttpServlet {
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -65,7 +66,7 @@ public class catPribadi_yunior_tiga_postulan_empat extends HttpServlet {
             }
 
             if (rs2.next()) {
-                catatan.setCatatans(rs2.getString("postulan4"));
+                catatan.setCatatans(rs2.getString("postulan5"));
             }
 
             try {
@@ -140,8 +141,8 @@ public class catPribadi_yunior_tiga_postulan_empat extends HttpServlet {
                         + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_satu?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 1</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_dua?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 2</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_tiga?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 3</a></li>\n"
-                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 4</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_lima?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 5</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_empat?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 4</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 5</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_enam?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 6</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_tujuh?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 7</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_delapan?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 8</a></li>\n"
@@ -152,7 +153,7 @@ public class catPribadi_yunior_tiga_postulan_empat extends HttpServlet {
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
-                        + "                            <form class=\"form\" action=\"./catPribadi_yunior_tiga_postulan_empat_save\" method=\"POST\" id=\"registrationForm\">\n"
+                        + "                            <form class=\"form\" action=\"./catPribadi_yunior_tiga_postulan_lima_save\" method=\"POST\" id=\"registrationForm\">\n"
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <h4>Nama Suster</h4>\n"
@@ -198,7 +199,7 @@ public class catPribadi_yunior_tiga_postulan_empat extends HttpServlet {
                 out.close();
             }
         } catch (Exception ex) {
-            Logger.getLogger(catPribadi_yunior_tiga_postulan_empat.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(catPribadi_yunior_tiga_postulan_lima.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
