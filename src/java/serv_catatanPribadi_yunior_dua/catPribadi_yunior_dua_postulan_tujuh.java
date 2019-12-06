@@ -133,7 +133,7 @@ public class catPribadi_yunior_dua_postulan_tujuh extends HttpServlet {
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li ><a href=\"./catPribadi_yunior_satu_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Yunior 1</a></li>\n"
                         + "                        <li class=\"active\"><a href=\"#\">Yunior 2</a></li>\n"
-                                + "                <li ><a href=\"#\">Yunior 3</a></li>"
+                                + "                <li ><a href=\"./catPribadi_yunior_tiga_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Yunior 3</a></li>"
                         + "                        \n"
                         + "                        \n"
                         + "                    </ul>\n"
