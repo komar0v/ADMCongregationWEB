@@ -7,12 +7,16 @@ package urusan_login_logout;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import kelasJava.koneksi_db;
 
 /**
  *
@@ -33,6 +37,28 @@ public class doLogout extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
+        String id_user = null;
+
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("idUser")) {
+                id_user = cookie.getValue();
+            }
+        }
+
+        try {
+            Connection con_uptd = koneksi_db.initializeDatabase();
+            PreparedStatement ps2uptd = con_uptd.prepareStatement("UPDATE tabel_akun SET status_akun=? WHERE id_akun=?");
+            ps2uptd.setString(1, "idle");
+            ps2uptd.setString(2, id_user);
+
+            ps2uptd.executeUpdate();
+            ps2uptd.close();
+            con_uptd.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
         if (session != null) {
             session.invalidate();
         }

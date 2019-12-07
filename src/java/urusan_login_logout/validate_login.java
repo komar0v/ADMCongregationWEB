@@ -6,6 +6,7 @@
 package urusan_login_logout;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -34,15 +35,16 @@ public class validate_login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
 
         String uname = "";
         String pswd = "";
-
+        String id_user = "";
         String nama_user = "";
         String status_akun = "";
 
         try {
-            
+
             String usrName = request.getParameter("email_");
             String passWd = request.getParameter("password_");
 
@@ -58,7 +60,7 @@ public class validate_login extends HttpServlet {
             Connection conn = koneksi_db.initializeDatabase();
 
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM tabel_akun WHERE email_akun=? AND pass_akun=?");
-            
+
             ps.setString(1, usrName);
             ps.setString(2, output_thesha256);
             ResultSet rs = ps.executeQuery();
@@ -68,10 +70,23 @@ public class validate_login extends HttpServlet {
                 pswd = rs.getString("pass_akun");
                 nama_user = rs.getString("nama_akun");
                 status_akun = rs.getString("status_akun");
+                id_user = rs.getString("id_akun");
             }
             rs.close();
 
-            if (uname.equals(usrName) && pswd.equalsIgnoreCase(output_thesha256)) {
+            if (uname.equals(usrName) && pswd.equalsIgnoreCase(output_thesha256) && status_akun.equals("idle")) {
+                try {
+                    Connection con_uptd = koneksi_db.initializeDatabase();
+                    PreparedStatement ps2uptd = con_uptd.prepareStatement("UPDATE tabel_akun SET status_akun=? WHERE id_akun=?");
+                    ps2uptd.setString(1, "used");
+                    ps2uptd.setString(2, id_user);
+
+                    ps2uptd.executeUpdate();
+                    ps2uptd.close();
+                    con_uptd.close();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
                 HttpSession oldSession = request.getSession(false);
                 if (oldSession != null) {
                     oldSession.invalidate();
@@ -83,8 +98,23 @@ public class validate_login extends HttpServlet {
                 newSession.setMaxInactiveInterval(5 * 60);
 
                 Cookie namaUser = new Cookie("namaUser", nama_user);
+                Cookie idUser = new Cookie("idUser", id_user);
                 response.addCookie(namaUser);
+                response.addCookie(idUser);
                 response.sendRedirect("./home_");
+                
+            } else if (uname.equals(usrName) && pswd.equalsIgnoreCase(output_thesha256) && status_akun.equals("used")) {
+
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('AKUN SEDANG DIPAKAI');");
+                out.println("location='./index.html';");
+                out.println("</script>");
+                
+            } else {
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('PASSWORD/USERNAME SALAH');");
+                out.println("location='./index.html';");
+                out.println("</script>");
             }
 
         } catch (Exception ex) {
