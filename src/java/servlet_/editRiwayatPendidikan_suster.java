@@ -24,13 +24,23 @@ import kelasJava.koneksi_db;
  *
  * @author ASUS
  */
-@WebServlet(name = "riwayatPendidikan_suster", urlPatterns = {"/riwayatPendidikan_suster"})
-public class riwayatPendidikan_suster extends HttpServlet {
+@WebServlet(name = "editRiwayatPendidikan_suster", urlPatterns = {"/editRiwayatPendidikan_suster"})
+public class editRiwayatPendidikan_suster extends HttpServlet {
 
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
+
         try {
             biodata_suster datanya = new biodata_suster();
 
@@ -48,13 +58,15 @@ public class riwayatPendidikan_suster extends HttpServlet {
             ResultSet rs2 = ps2.executeQuery();
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
+                datanya.setNama_suster(rs.getString("nama_suster"));
 
             }
-            String pendidikan = "";
+            String pendidikan_ = "";
             if (rs2.next()) {
-                pendidikan = rs2.getString("pendidikan");
+                pendidikan_ = rs2.getString("pendidikan");
+                
             }
-            String arrRiwayatPendi[] = pendidikan.split(",");
+            String arrpendi[] = pendidikan_.split(",");
 
             try {
                 out.println("<!DOCTYPE html>\n"
@@ -100,7 +112,7 @@ public class riwayatPendidikan_suster extends HttpServlet {
                         + "    <body>\n"
                         + "        <div class=\"container bootstrap snippet\">\n"
                         + "<div class=\"row\">\n"
-                        + "<a class=\"previous\" href=\"./detailViewSuster_?id_suster=" + datanya.getId_Suster() + "\">&#10094; KEMBALI</a>\n"
+                        + "<a class=\"previous\" href=\"./riwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">&#10094; KEMBALI</a>\n"
                         + "</div>"
                         + "            <div class=\"row\">\n"
                         + "                <div class=\"col-sm-10\"><h1>Edit Data Suster</h1></div>\n"
@@ -121,39 +133,42 @@ public class riwayatPendidikan_suster extends HttpServlet {
                         + "                </div><!--/col-3-->\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li ><a href=\"./editSusterView_?id_suster=" + datanya.getId_Suster() + "\">Informasi Dasar</a></li>\n"
-                        + "			   <li ><a href=\"./minatBakat_suster?id_suster=" + datanya.getId_Suster() + "\">Minat Bakat</a></li>"
-                        + "                        <li class=\"active\"><a href=\"#\">Riwayat Pendidikan</a></li>\n"
-                        + "                        <li ><a href=\"./editDataBiaraView_?id_suster="+datanya.getId_Suster()+"\">Data Biara</a></li>"
-                        + "                        <li ><a href=\"./seminarYgPernahIkut_suster?id_suster="+datanya.getId_Suster()+"\">Data Seminar</a></li>\n"
-                        + "                        <li ><a href=\"./catatanPribadi_suster?id_suster="+datanya.getId_Suster()+"\">Catatan Pribadi</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\">Edit Data Pendidikan</a></li>\n"
                                 + "</ul>\n"
                         + "\n"
                         + "\n"
                         + "                    <div class=\"tab-content\">\n"
                         + "                        <div class=\"tab-pane active\" id=\"home\">\n"
                         + "                            \n"
-                        + "                                    \n"
+                        + "                                   <form class=\"form\" action=\"./editRiwayatPendidikan_susterLakukanPerubahan\" method=\"POST\"> \n"
+                                + "                        <div class=\"form-group\">\n"
+                        + "                                   <h4>Nama Suster</h4>\n"
+                        + "				      <input type=\"text\"  class=\"form-control\" name=\"temp_name\" readonly value=\"" + datanya.getNama_suster()+ "\">\n"
+                        + "                                </div>\n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n"
-                        + "										<input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
+                        + "                                     <input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
                         + "                                </div>\n"
                         + "								\n"
                         + "								<div class=\"field_wrapper\">\n"
-                        + "                       <hr><h4>Riwayat Pendidikan</h4> <div id=\"minat_bakat\">\n");
-                for (int i = 0; i < arrRiwayatPendi.length-1; i++) {
-                    out.println("<br><li>" + arrRiwayatPendi[i] + "</li><br>");
+                        + "                       <hr><h4>Edit Data Pendidikan</h4><p>Jangan masukkan tanda koma (,) kedalam kolom</p> "
+                                + "<div id=\"minat_bakat\">\n"
+                                + "<table border=1>");
+                out.println("<tr><th>Pendidikan</th></tr>");
+                for (int i = 0; i < arrpendi.length - 1; i++) {
+                    
+                    out.println("<tr><td><input type=\"text\" name=\"pendidikan_\" size=\"60\" value=\""+arrpendi[i]+"\"></td></tr>");
                 }
 
-                out.println("                     </div>\n"
+                out.println("              </table></div>\n"
                         + "                    </div>\n"
                         + "\n"
                         + "                                \n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <div class=\"col-xs-12\">\n"
-                        + "                                        <br>\n"
-                        + "<a href=\"./formAddRiwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">TAMBAH DATA</a>                                        "
-                        + "<a href=\"./editRiwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">EDIT DATA</a>\n"
+                        + "                                        <br><button class=\"button primary icon solid fa-save\" type=\"submit\">SIMPAN PERUBAHAN</button>\n"
+                        + "                                            <button class=\"button icon solid\" type=\"reset\"><i class=\"glyphicon glyphicon-repeat\"></i> Reset</button>"
+                        + "</form>\n"
                         + "                                    </div>\n"
                         + "                                </div>\n"
                         + "                            <hr>\n"
@@ -163,37 +178,7 @@ public class riwayatPendidikan_suster extends HttpServlet {
                         + "                </div><!--/col-9-->\n"
                         + "            </div><!--/row-->\n"
                         + "        </div>\n"
-                        + "        <script>\n"
-                        + "            $(\".custom-file-input\").on(\"change\", function () {\n"
-                        + "                var fileName = $(this).val().split(\"\\\\\").pop();\n"
-                        + "                $(this).siblings(\".custom-file-label\").addClass(\"selected\").html(fileName);\n"
-                        + "            });\n"
-                        + "        </script>\n"
-                        + "		<script type=\"text/javascript\">\n"
-                        + "                $(document).ready(function () {\n"
-                        + "                    var maxField = 10; //Input fields increment limitation\n"
-                        + "                    var addButton = $('.add_button'); //Add button selector\n"
-                        + "                    var wrapper = $('.field_wrapper'); //Input field wrapper <img src=\"https://img.icons8.com/flat_round/64/000000/minus.png\">\n"
-                        + "                    var fieldHTML = '<div><input type=\"text\" name=\"minatbakat[]\" value=\"\" size=\"30\"/><a href=\"javascript:void(0);\" class=\"remove_button\"><img src=\"https://img.icons8.com/pastel-glyph/64/000000/minus.png\" width=\"25\" height=\"25\"></a></div>'; //New input field html \n"
-                        + "                    var x = 1; //Initial field counter is 1\n"
-                        + "\n"
-                        + "                    //Once add button is clicked\n"
-                        + "                    $(addButton).click(function () {\n"
-                        + "                        //Check maximum number of input fields\n"
-                        + "                        if (x < maxField) {\n"
-                        + "                            x++; //Increment field counter\n"
-                        + "                            $(wrapper).append(fieldHTML); //Add field html\n"
-                        + "                        }\n"
-                        + "                    });\n"
-                        + "\n"
-                        + "                    //Once remove button is clicked\n"
-                        + "                    $(wrapper).on('click', '.remove_button', function (e) {\n"
-                        + "                        e.preventDefault();\n"
-                        + "                        $(this).parent('div').remove(); //Remove field html\n"
-                        + "                        x--; //Decrement field counter\n"
-                        + "                    });\n"
-                        + "                });\n"
-                        + "            </script>\n"
+                        + "        "
                         + "    </body>\n"
                         + "\n"
                         + "</html>\n"
@@ -201,8 +186,9 @@ public class riwayatPendidikan_suster extends HttpServlet {
             } finally {
                 out.close();
             }
-        } catch (Exception ex) {
-            Logger.getLogger(riwayatPendidikan_suster.class.getName()).log(Level.SEVERE, null, ex);
+
+        } catch (Exception e) {
+            Logger.getLogger(editSeminar_suster.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
@@ -217,6 +203,7 @@ public class riwayatPendidikan_suster extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
     }
 
     /**

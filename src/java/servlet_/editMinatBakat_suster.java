@@ -133,7 +133,7 @@ public class editMinatBakat_suster extends HttpServlet {
                         + "                </div><!--/col-3-->\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li class=\"active\"><a href=\"#\">Edit Data Seminar</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\">Edit Data Minat Bakat</a></li>\n"
                                 + "</ul>\n"
                         + "\n"
                         + "\n"
