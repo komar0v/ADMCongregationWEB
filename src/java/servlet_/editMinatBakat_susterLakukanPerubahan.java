@@ -58,15 +58,13 @@ public class editMinatBakat_susterLakukanPerubahan extends HttpServlet {
             minat_bakat = minat_bakat + minatBakat_[i] + " , ";
             
         }
-        
         try{
-            Connection con3 = koneksi_db.initializeDatabase();
-            PreparedStatement prpStmt3 = con3.prepareStatement("UPDATE minatbakat_suster SET minatbakat=?, WHERE id_suster=?");
-            prpStmt3.setString(1, minat_bakat);
-            prpStmt3.setString(2, idSuster);
-
-            prpStmt3.executeUpdate();
-            con3.close();
+            Connection con_ = koneksi_db.initializeDatabase();
+            PreparedStatement prpStmt_ = con_.prepareStatement("UPDATE minatbakat_suster SET minatbakat=? WHERE id_suster=?");
+            prpStmt_.setString(1, minat_bakat);
+            prpStmt_.setString(2, idSuster);
+            prpStmt_.executeUpdate();
+            con_.close();
         }
         catch(Exception e){
             e.printStackTrace();
