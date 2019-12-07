@@ -173,37 +173,7 @@ public class seminarYgPernahIkut_suster extends HttpServlet {
                         + "                </div><!--/col-9-->\n"
                         + "            </div><!--/row-->\n"
                         + "        </div>\n"
-                        + "        <script>\n"
-                        + "            $(\".custom-file-input\").on(\"change\", function () {\n"
-                        + "                var fileName = $(this).val().split(\"\\\\\").pop();\n"
-                        + "                $(this).siblings(\".custom-file-label\").addClass(\"selected\").html(fileName);\n"
-                        + "            });\n"
-                        + "        </script>\n"
-                        + "		<script type=\"text/javascript\">\n"
-                        + "                $(document).ready(function () {\n"
-                        + "                    var maxField = 10; //Input fields increment limitation\n"
-                        + "                    var addButton = $('.add_button'); //Add button selector\n"
-                        + "                    var wrapper = $('.field_wrapper'); //Input field wrapper <img src=\"https://img.icons8.com/flat_round/64/000000/minus.png\">\n"
-                        + "                    var fieldHTML = '<div><input type=\"text\" name=\"minatbakat[]\" value=\"\" size=\"30\"/><a href=\"javascript:void(0);\" class=\"remove_button\"><img src=\"https://img.icons8.com/pastel-glyph/64/000000/minus.png\" width=\"25\" height=\"25\"></a></div>'; //New input field html \n"
-                        + "                    var x = 1; //Initial field counter is 1\n"
-                        + "\n"
-                        + "                    //Once add button is clicked\n"
-                        + "                    $(addButton).click(function () {\n"
-                        + "                        //Check maximum number of input fields\n"
-                        + "                        if (x < maxField) {\n"
-                        + "                            x++; //Increment field counter\n"
-                        + "                            $(wrapper).append(fieldHTML); //Add field html\n"
-                        + "                        }\n"
-                        + "                    });\n"
-                        + "\n"
-                        + "                    //Once remove button is clicked\n"
-                        + "                    $(wrapper).on('click', '.remove_button', function (e) {\n"
-                        + "                        e.preventDefault();\n"
-                        + "                        $(this).parent('div').remove(); //Remove field html\n"
-                        + "                        x--; //Decrement field counter\n"
-                        + "                    });\n"
-                        + "                });\n"
-                        + "            </script>\n"
+                        + "        "
                         + "    </body>\n"
                         + "\n"
                         + "</html>\n"
@@ -214,6 +184,7 @@ public class seminarYgPernahIkut_suster extends HttpServlet {
 
         } catch (Exception e) {
             Logger.getLogger(seminarYgPernahIkut_suster.class.getName()).log(Level.SEVERE, null, e);
+            out.println("ERROR");
         }
     }
 
