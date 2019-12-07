@@ -10,14 +10,14 @@
         </session-timeout>
     </session-config>
     
-    <filter>
+<!--    <filter>
         <filter-name>authFilter</filter-name>
         <filter-class>urusan_login_logout.authFilter</filter-class>
-    </filter>
+    </filter>-->
     
-    <filter-mapping>
+<!--    <filter-mapping>
         <filter-name>authFilter</filter-name>
         <url-pattern>/home_</url-pattern>
-        <!--<url-pattern>/_home_admin</url-pattern>-->
-    </filter-mapping>
+        <url-pattern>/_home_admin</url-pattern>
+    </filter-mapping>-->
 </web-app>
