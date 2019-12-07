@@ -6,17 +6,22 @@
 package urusan_login_logout;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import kelasJava.koneksi_db;
 
 /**
@@ -26,50 +31,64 @@ import kelasJava.koneksi_db;
 @WebServlet(name = "validate_login", urlPatterns = {"/validate_login"})
 public class validate_login extends HttpServlet {
 
-    static String sha256(String input) throws NoSuchAlgorithmException {
-        MessageDigest mDigest = MessageDigest.getInstance("SHA256");
-        byte[] result = mDigest.digest(input.getBytes());
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < result.length; i++) {
-            sb.append(Integer.toString((result[i] & 0xff) + 0x100, 16).substring(1));
-        }
-
-        return sb.toString();
-    }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String email4login="";
-        String pass4login="";
 
-        String email_ = request.getParameter("email_");
-        String password_ = request.getParameter("password_");
+        String uname = "";
+        String pswd = "";
+
+        String nama_user = "";
+        String status_akun = "";
 
         try {
+            
+            String usrName = request.getParameter("email_");
+            String passWd = request.getParameter("password_");
 
-            String encrypted_str_pswd = sha256(password_);
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            String text = passWd;
+
+            md.update(text.getBytes(StandardCharsets.UTF_8));
+            byte[] digest = md.digest();
+
+            String output_thesha256 = String.format("%064x", new BigInteger(1, digest));
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = koneksi_db.initializeDatabase();
 
-            PreparedStatement prepStmt_auth = conn.prepareStatement("SELECT * FROM tabel_akun WHERE email_akun=? AND pass_akun=?");
-            prepStmt_auth.setString(1, email_);
-            prepStmt_auth.setString(2, encrypted_str_pswd);
-            ResultSet rs = prepStmt_auth.executeQuery();
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM tabel_akun WHERE email_akun=? AND pass_akun=?");
+            
+            ps.setString(1, usrName);
+            ps.setString(2, output_thesha256);
+            ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                email4login = rs.getString("email_akun");
-                pass4login = rs.getString("pass_akun");
+                uname = rs.getString("email_akun");
+                pswd = rs.getString("pass_akun");
+                nama_user = rs.getString("nama_akun");
+                status_akun = rs.getString("status_akun");
             }
             rs.close();
-            
-            if(email4login.equals(email_)){
-                System.out.println("login berhasil");
+
+            if (uname.equals(usrName) && pswd.equalsIgnoreCase(output_thesha256)) {
+                HttpSession oldSession = request.getSession(false);
+                if (oldSession != null) {
+                    oldSession.invalidate();
+                }
+                //generate a new session
+                HttpSession newSession = request.getSession(true);
+
+                //setting session to expiry in 5 mins
+                newSession.setMaxInactiveInterval(5 * 60);
+
+                Cookie namaUser = new Cookie("namaUser", nama_user);
+                response.addCookie(namaUser);
+                response.sendRedirect("./home_");
             }
 
         } catch (Exception ex) {
-
+            Logger.getLogger(validate_login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

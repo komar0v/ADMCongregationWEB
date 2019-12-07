@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *                                            INI ADALAH KELAS JAVA BUKAN SERVLET
  * @author ASUS
  */
-public class authFilter implements Filter{
+public class authFilter_ implements Filter{
     private ServletContext context;
 
     @Override
