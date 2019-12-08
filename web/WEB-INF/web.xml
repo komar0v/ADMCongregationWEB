@@ -6,6 +6,10 @@
         </session-timeout>
     </session-config>
     
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    
     <filter>
         <filter-name>authFilter_</filter-name>
         <filter-class>urusan_login_logout.authFilter_</filter-class>
@@ -15,5 +19,8 @@
         <filter-name>authFilter_</filter-name>
         <url-pattern>/home_</url-pattern>
         <url-pattern>/showSuster_</url-pattern>
+        <url-pattern>/getImagefromDB</url-pattern>
     </filter-mapping>
+    
+    
 </web-app>
