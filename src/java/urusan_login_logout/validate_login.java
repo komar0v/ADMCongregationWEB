@@ -41,7 +41,6 @@ public class validate_login extends HttpServlet {
         String pswd = "";
         String id_user = "";
         String nama_user = "";
-        String status_akun = "";
 
         try {
 
@@ -69,12 +68,11 @@ public class validate_login extends HttpServlet {
                 uname = rs.getString("email_akun");
                 pswd = rs.getString("pass_akun");
                 nama_user = rs.getString("nama_akun");
-                status_akun = rs.getString("status_akun");
                 id_user = rs.getString("id_akun");
             }
             rs.close();
 
-            if (uname.equals(usrName) && pswd.equalsIgnoreCase(output_thesha256) && status_akun.equals("idle")) {
+            if (uname.equals(usrName) && pswd.equalsIgnoreCase(output_thesha256)) {
                 try {
                     Connection con_uptd = koneksi_db.initializeDatabase();
                     PreparedStatement ps2uptd = con_uptd.prepareStatement("UPDATE tabel_akun SET status_akun=? WHERE id_akun=?");
@@ -103,14 +101,8 @@ public class validate_login extends HttpServlet {
                 response.addCookie(idUser);
                 response.sendRedirect("./home_");
                 
-            } else if (uname.equals(usrName) && pswd.equalsIgnoreCase(output_thesha256) && status_akun.equals("used")) {
-
-                out.println("<script type=\"text/javascript\">");
-                out.println("alert('AKUN SEDANG DIPAKAI');");
-                out.println("location='./index.html';");
-                out.println("</script>");
-                
-            } else {
+            }
+            else {
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('PASSWORD/USERNAME SALAH');");
                 out.println("location='./index.html';");
