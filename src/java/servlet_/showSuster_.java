@@ -246,9 +246,9 @@ public class showSuster_ extends HttpServlet {
                     + "</script>\n"
                     + "</head>\n"
                     + "<body>"
-                    + "<div class=\"topnav\">\n" +
-"  <a class=\"active\" href=\"./home_\">Home</a>\n" +
-"</div>\n"
+                    + "<div class=\"topnav\">\n"
+                    + "  <a class=\"active\" href=\"./home_\">Home</a>\n"
+                    + "</div>\n"
                     + "    <div class=\"container\">\n"
                     + "        <div class=\"table-wrapper\">			\n"
                     + "            <div class=\"table-title\">\n"

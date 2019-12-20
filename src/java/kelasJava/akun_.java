@@ -11,6 +11,15 @@ package kelasJava;
  */
 public class akun_ {
     private String nama_akun, email_akun, password_akun;
+    private int id_akun;
+
+    public int getId_akun() {
+        return id_akun;
+    }
+
+    public void setId_akun(int id_akun) {
+        this.id_akun = id_akun;
+    }
 
     public String getNama_akun() {
         return nama_akun;
