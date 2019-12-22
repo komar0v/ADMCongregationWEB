@@ -19,18 +19,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import kelasJava.akun_;
 import kelasJava.koneksi_db;
 
 /**
  *
  * @author ASUS
  */
-@WebServlet(name = "do_simpanPerubahanDataAkun", urlPatterns = {"/do_simpanPerubahanDataAkun"})
-public class do_simpanPerubahanDataAkun extends HttpServlet {
+@WebServlet(name = "do_simpanAkunBaru", urlPatterns = {"/do_simpanAkunBaru"})
+public class do_simpanAkunBaru extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
     }
 
     /**
@@ -45,34 +47,50 @@ public class do_simpanPerubahanDataAkun extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            String passWd = request.getParameter("password_");
+            int idAkun = Integer.parseInt(request.getParameter("id_akun"));
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            String text = passWd;
+
+            md.update(text.getBytes(StandardCharsets.UTF_8));
+            byte[] digest = md.digest();
+
+            String output_thesha256 = String.format("%064x", new BigInteger(1, digest));
             String namaAkun = request.getParameter("nama_");
             String emailAkun = request.getParameter("email_");
-            int idAkun = Integer.parseInt(request.getParameter("id_akun"));
+            
+            akun_ account_ = new akun_();
+            account_.setId_akun(idAkun);
+            account_.setNama_akun(namaAkun);
+            account_.setPassword_akun(output_thesha256);
+            account_.setEmail_akun(emailAkun);
             
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = koneksi_db.initializeDatabase();
 
-            PreparedStatement ps = conn.prepareStatement("UPDATE tabel_akun SET email_akun=?, nama_akun=? WHERE id_akun=?");
-
-            ps.setString(1, emailAkun);
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO tabel_akun VALUES (?,?,?,?,?)");
+            
+            ps.setInt(1, account_.getId_akun());
             ps.setString(2, namaAkun);
-            ps.setInt(3, idAkun);
+            ps.setString(3, account_.getEmail_akun());
+            ps.setString(4, account_.getPassword_akun());
+            ps.setString(5, "idle");
             ps.executeUpdate();
             ps.close();
             conn.close();
             PrintWriter out = response.getWriter();
             try {
                 out.println("<script type=\"text/javascript\">");
-                out.println("alert('Berhasil mengubah data. Silahkan login kembali.');");
-                out.println("location='./doLogout';");
+                out.println("alert('Berhasil menambahkan akun "+namaAkun+".');");
+                out.println("location='./home_';");
                 out.println("</script>");
             } finally {
                 out.close();
             }
 
         } catch (Exception ex) {
-            Logger.getLogger(do_simpanPerubahanDataAkun.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(do_simpanAkunBaru.class.getName()).log(Level.SEVERE, null, ex);
             String pesan_error = ex.getMessage();
             System.out.println("ERR  "+pesan_error);
         }
