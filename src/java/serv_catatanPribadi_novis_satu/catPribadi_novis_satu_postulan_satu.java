@@ -129,7 +129,7 @@ public class catPribadi_novis_satu_postulan_satu extends HttpServlet {
                         + "                    <ul class=\"nav nav-tabs\">\n"
                         + "                        <li class=\"active\"><a href=\"#\">Novis 1-1</a></li>\n"
                         + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_dua?id_suster="+datanya.getId_Suster()+"\">Novis 1-2</a></li>\n"
-                        + "                        "
+                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_tiga?id_suster=" + datanya.getId_Suster() + "\">Novis 1-3</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
