@@ -28,15 +28,6 @@ import kelasJava.koneksi_db;
 @WebServlet(name = "catPribadi_yunior_tiga_postulan_dua", urlPatterns = {"/catPribadi_yunior_tiga_postulan_dua"})
 public class catPribadi_yunior_tiga_postulan_dua extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -137,16 +128,16 @@ public class catPribadi_yunior_tiga_postulan_dua extends HttpServlet {
                         + "                        \n"
                         + "                    </ul>\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_satu?id_suster="+datanya.getId_Suster()+"\">POSTULAN 1</a></li>\n"
-                        + "                        <li class=\"active\"><a href=\"#\">POSTULAN 2</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_tiga?id_suster="+datanya.getId_Suster()+"\">POSTULAN 3</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_empat?id_suster="+datanya.getId_Suster()+"\">POSTULAN 4</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_lima?id_suster="+datanya.getId_Suster()+"\">POSTULAN 5</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_enam?id_suster="+datanya.getId_Suster()+"\">POSTULAN 6</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_tujuh?id_suster="+datanya.getId_Suster()+"\">POSTULAN 7</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_delapan?id_suster="+datanya.getId_Suster()+"\">POSTULAN 8</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_sembilan?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 9</a></li>\n"
-                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_sepuluh?id_suster=" + datanya.getId_Suster() + "\">POSTULAN 10</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_satu?id_suster="+datanya.getId_Suster()+"\"> 1</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\"> 2</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_tiga?id_suster="+datanya.getId_Suster()+"\"> 3</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_empat?id_suster="+datanya.getId_Suster()+"\"> 4</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_lima?id_suster="+datanya.getId_Suster()+"\"> 5</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_enam?id_suster="+datanya.getId_Suster()+"\"> 6</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_tujuh?id_suster="+datanya.getId_Suster()+"\"> 7</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_delapan?id_suster="+datanya.getId_Suster()+"\"> 8</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_sembilan?id_suster=" + datanya.getId_Suster() + "\"> 9</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_yunior_tiga_postulan_sepuluh?id_suster=" + datanya.getId_Suster() + "\"> 10</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"

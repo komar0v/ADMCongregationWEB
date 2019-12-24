@@ -103,7 +103,7 @@ public class catPribadi_novis_dua_postulan_satu extends HttpServlet {
                         + "\n"
                         + "    <body>\n"
                         + "        <div class=\"row\">\n"
-                        + "            <a class=\"previous\" href=\"./catatanPribadi_suster?id_suster="+datanya.getId_Suster()+"\">&#10094; KEMBALI</a>\n"
+                        + "            <a class=\"previous\" href=\"./catatanPribadi_suster?id_suster=" + datanya.getId_Suster() + "\">&#10094; KEMBALI</a>\n"
                         + "        </div>        <div class=\"container bootstrap snippet\">\n"
                         + "            <div class=\"row\">\n"
                         + "                <div class=\"col-sm-10\"><h1>Data Catatan Pribadi</h1></div>\n"
@@ -114,20 +114,22 @@ public class catPribadi_novis_dua_postulan_satu extends HttpServlet {
                         + "\n"
                         + "\n"
                         + "                    <div class=\"text-center\">\n"
-                        + "                        <img src=\"getImagefromDB?id_suster="+datanya.getId_Suster()+"\"  height=\"200\" width=\"200\" >\n"
+                        + "                        <img src=\"getImagefromDB?id_suster=" + datanya.getId_Suster() + "\"  height=\"200\" width=\"200\" >\n"
                         + "\n"
                         + "                    </div><br>\n"
                         + "\n"
                         + "                </div><!--/col-3-->\n"
                         + "                <div class=\"col-sm-9\">\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_satu?id_suster="+datanya.getId_Suster()+"\">Novis 1</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_satu_postulan_satu?id_suster=" + datanya.getId_Suster() + "\">Novis 1</a></li>\n"
                         + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Novis 2</a></li>\n"
                         + "                        \n"
                         + "                        \n"
                         + "                    </ul>\n"
                         + "                    <ul class=\"nav nav-tabs\">\n"
-                        + "                        <li class=\"active\"><a href=\"#\">Novis 2</a></li>\n"
+                        + "                        <li class=\"active\"><a href=\"#\">Novis 2-1</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_dua?id_suster="+datanya.getId_Suster()+"\">Novis 2-2</a></li>\n"
+                        + "                        <li ><a href=\"./catPribadi_novis_dua_postulan_tiga?id_suster=" + datanya.getId_Suster() + "\">Novis 2-3</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
@@ -137,11 +139,11 @@ public class catPribadi_novis_dua_postulan_satu extends HttpServlet {
                         + "\n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <h4>Nama Suster</h4>\n"
-                        + "                                    <input type=\"text\"  class=\"form-control\" name=\"temp_name\" readonly value=\""+datanya.getNama_suster()+"\">\n"
+                        + "                                    <input type=\"text\"  class=\"form-control\" name=\"temp_name\" readonly value=\"" + datanya.getNama_suster() + "\">\n"
                         + "                                </div>\n"
                         + "                                <div class=\"form-group\">\n"
                         + "                                    <h4>NIK Suster</h4>\n"
-                        + "                                    <input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\""+datanya.getId_Suster()+"\">\n"
+                        + "                                    <input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n"
                         + "                                </div>\n"
                         + "\n"
                         + "                                <hr><h4>Catatan Pribadi</h4>                                    \n"
@@ -149,7 +151,7 @@ public class catPribadi_novis_dua_postulan_satu extends HttpServlet {
                         + "                                <div class=\"field_wrapper\">\n"
                         + "                                    <div>\n"
                         + "                                        \n"
-                        + "                                        <textarea name=\"catanPribadi\" rows=\"15\" cols=\"90\">"+catatan.getCatatans()+"</textarea>\n"
+                        + "                                        <textarea name=\"catanPribadi\" rows=\"15\" cols=\"90\">" + catatan.getCatatans() + "</textarea>\n"
                         + "                                    </div>\n"
                         + "                                </div>\n"
                         + "\n"
@@ -186,7 +188,7 @@ public class catPribadi_novis_dua_postulan_satu extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     /**
