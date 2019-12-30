@@ -73,18 +73,7 @@ public class validate_login extends HttpServlet {
             rs.close();
 
             if (uname.equals(usrName) && pswd.equalsIgnoreCase(output_thesha256)) {
-                try {
-                    Connection con_uptd = koneksi_db.initializeDatabase();
-                    PreparedStatement ps2uptd = con_uptd.prepareStatement("UPDATE tabel_akun SET status_akun=? WHERE id_akun=?");
-                    ps2uptd.setString(1, "used");
-                    ps2uptd.setString(2, id_user);
-
-                    ps2uptd.executeUpdate();
-                    ps2uptd.close();
-                    con_uptd.close();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
+                
                 HttpSession oldSession = request.getSession(false);
                 if (oldSession != null) {
                     oldSession.invalidate();

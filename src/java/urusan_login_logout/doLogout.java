@@ -46,18 +46,6 @@ public class doLogout extends HttpServlet {
             }
         }
 
-        try {
-            Connection con_uptd = koneksi_db.initializeDatabase();
-            PreparedStatement ps2uptd = con_uptd.prepareStatement("UPDATE tabel_akun SET status_akun=? WHERE id_akun=?");
-            ps2uptd.setString(1, "idle");
-            ps2uptd.setString(2, id_user);
-
-            ps2uptd.executeUpdate();
-            ps2uptd.close();
-            con_uptd.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
 
         if (session != null) {
             session.invalidate();
