@@ -17,6 +17,82 @@
         <url-pattern>/home_</url-pattern>
         <url-pattern>/showSuster_</url-pattern>
         <url-pattern>/getImagefromDB</url-pattern>
+        <url-pattern>/formAdd_suster</url-pattern>
+        <url-pattern>/pengaturan_akun</url-pattern>
+        <url-pattern>/ganti_pass_akun</url-pattern>
+        <url-pattern>/do_simpanPasswordBaru</url-pattern>
+        <url-pattern>/tambah_akun</url-pattern>
+        <url-pattern>/do_simpanAkunBaru</url-pattern>
+        <url-pattern>/hapusSuster_</url-pattern>
+        <url-pattern>/catatanPribadi_suster</url-pattern>
+        <url-pattern>/do_simpanPerubahanDataAkun</url-pattern>
+        <url-pattern>/detailViewSuster_</url-pattern>
+        <url-pattern>/editDataBiaraLakukanPerubahan_</url-pattern>
+        <url-pattern>/editDataBiaraView_</url-pattern>
+        <url-pattern>/editMinatBakat_suster</url-pattern>
+        <url-pattern>/editMinatBakat_susterLakukanPerubahan</url-pattern>
+        <url-pattern>/editRiwayatPendidikan_suster</url-pattern>
+        <url-pattern>/editRiwayatPendidikan_susterLakukanPerubahan</url-pattern>
+        <url-pattern>/editSeminar_suster</url-pattern>
+        <url-pattern>/editSeminar_susterLakukanPerubahan</url-pattern>
+        <url-pattern>/editSusterLakukanPerubahan_</url-pattern>
+        <url-pattern>/editSusterView_</url-pattern>
+        <url-pattern>/formAddMinatBakat_suster2</url-pattern>
+        <url-pattern>/formAddRiwayatPendidikan_suster</url-pattern>
+        <url-pattern>/formAddSeminar_suster</url-pattern>
+        <url-pattern>/riwayatPendidikan_suster</url-pattern>
+        <url-pattern>/minatBakat_suster</url-pattern>
+        <url-pattern>/seminarYgPernahIkut_suster</url-pattern>
+        <url-pattern>/tambahMinatBakatSuster</url-pattern>
+        <url-pattern>/tambahRiwayatPendidikan_suster</url-pattern>
+        <url-pattern>/tambahSeminarYgPernahIkut_suster</url-pattern>
+        <url-pattern>/tambahSuster_</url-pattern>
+        
+        <url-pattern>/catPribadi_novis_satu_postulan_delapan</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_delapan_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_dua</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_dua_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_empat</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_empat_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_enam</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_enam_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_lima</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_lima_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_satu</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_satu_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_sembilan</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_sembilan_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_sepuluh</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_sepuluh_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_tiga</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_tiga_save</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_tujuh</url-pattern>
+        <url-pattern>/catPribadi_novis_satu_postulan_tujuh_save</url-pattern>
+        
+        <url-pattern>/catPribadi_novis_dua_postulan_delapan</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_delapan_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_dua</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_dua_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_empat</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_empat_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_enam</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_enam_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_lima</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_lima_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_satu</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_satu_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_sembilan</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_sembilan_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_sepuluh</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_sepuluh_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_tiga</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_tiga_save</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_tujuh</url-pattern>
+        <url-pattern>/catPribadi_novis_dua_postulan_tujuh_save</url-pattern>
+        
+
+
+
     </filter-mapping>
     <error-page>
         <error-code>404</error-code>
