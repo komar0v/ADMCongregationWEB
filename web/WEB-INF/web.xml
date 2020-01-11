@@ -90,8 +90,68 @@
         <url-pattern>/catPribadi_novis_dua_postulan_tujuh</url-pattern>
         <url-pattern>/catPribadi_novis_dua_postulan_tujuh_save</url-pattern>
         
-
-
+        <url-pattern>/catPribadi_yunior_satu_postulan_delapan</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_delapan_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_dua</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_dua_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_empat</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_empat_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_enam</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_enam_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_lima</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_lima_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_satu</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_satu_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_sembilan</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_sembilan_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_sepuluh</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_sepuluh_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_tiga</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_tiga_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_tujuh</url-pattern>
+        <url-pattern>/catPribadi_yunior_satu_postulan_tujuh_save</url-pattern>
+        
+        <url-pattern>/catPribadi_yunior_dua_postulan_delapan</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_delapan_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_dua</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_dua_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_empat</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_empat_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_enam</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_enam_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_lima</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_lima_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_satu</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_satu_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_sembilan</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_sembilan_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_sepuluh</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_sepuluh_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_tiga</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_tiga_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_tujuh</url-pattern>
+        <url-pattern>/catPribadi_yunior_dua_postulan_tujuh_save</url-pattern>
+        
+        <url-pattern>/catPribadi_yunior_tiga_postulan_delapan</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_delapan_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_dua</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_dua_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_empat</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_empat_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_enam</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_enam_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_lima</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_lima_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_satu</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_satu_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_sembilan</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_sembilan_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_sepuluh</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_sepuluh_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_tiga</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_tiga_save</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_tujuh</url-pattern>
+        <url-pattern>/catPribadi_yunior_tiga_postulan_tujuh_save</url-pattern>
 
     </filter-mapping>
     <error-page>
