@@ -93,7 +93,7 @@ public class editSusterLakukanPerubahan_ extends HttpServlet {
 
         try {
             Connection con = koneksi_db.initializeDatabase();
-            PreparedStatement prpStmt = con.prepareStatement("UPDATE biodata_suster SET nama_suster=?, nama_asal_suster=?, tempat_lahir_suster=?, tanggal_lahir_suster=?, nama_ayah_suster=?, nama_ibu_suster=?, anak_ke=?, jmlh_saudara=?, foto=? WHERE id_suster=?");
+            PreparedStatement prpStmt = con.prepareStatement("UPDATE biodata_suster SET nama_suster=?, nama_asal_suster=?, tempat_lahir_suster=?, tanggal_lahir_suster=?, nama_ayah_suster=?, nama_ibu_suster=?, anak_ke=?, jmlh_saudara=?, motto_suster=? WHERE id_suster=?");
             
             prpStmt.setString(1, suster.getNama_suster());
             prpStmt.setString(2, suster.getNama_asal_suster());
@@ -103,7 +103,7 @@ public class editSusterLakukanPerubahan_ extends HttpServlet {
             prpStmt.setString(6, suster.getNama_ibu_suster());
             prpStmt.setInt(7, suster.getAnak_ke());
             prpStmt.setInt(8, suster.getJmlh_saudara());
-            prpStmt.setBlob(9, inputStream);
+            prpStmt.setString(9, request.getParameter("motto_suster"));
             prpStmt.setString(10, suster.getId_Suster());
 
             prpStmt.executeUpdate();

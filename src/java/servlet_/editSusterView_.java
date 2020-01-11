@@ -60,7 +60,7 @@ public class editSusterView_ extends HttpServlet {
 
         try {
             biodata_suster datanya = new biodata_suster();
-
+            String mottoSuster="";
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = koneksi_db.initializeDatabase();
 
@@ -68,7 +68,7 @@ public class editSusterView_ extends HttpServlet {
 
             String idnyaSuster = request.getParameter("id_suster");
             ps.setString(1, idnyaSuster);
-
+            
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 datanya.setId_Suster(rs.getString("id_suster"));
@@ -80,6 +80,7 @@ public class editSusterView_ extends HttpServlet {
                 datanya.setAnak_ke(rs.getInt("anak_ke"));
                 datanya.setTempat_lahir_suster(rs.getString("tempat_lahir_suster"));
                 datanya.setTanggal_lahir_suster(rs.getString("tanggal_lahir_suster"));
+                mottoSuster = rs.getString("motto_suster");
             }
 
             try {
@@ -151,9 +152,9 @@ public class editSusterView_ extends HttpServlet {
                         + "                        <li class=\"active\"><a data-toggle=\"tab\" href=\"#\">Informasi Dasar</a></li>"
                         + "                        <li ><a href=\"./minatBakat_suster?id_suster=" + datanya.getId_Suster() + "\">Minat Bakat</a></li>"
                         + "                        <li ><a href=\"./riwayatPendidikan_suster?id_suster=" + datanya.getId_Suster() + "\">Riwayat Pendidikan</a></li>\n"
-                        + "                        <li ><a href=\"./editDataBiaraView_?id_suster="+datanya.getId_Suster()+"\">Data Biara</a></li>            "
-                        + "                        <li ><a href=\"./seminarYgPernahIkut_suster?id_suster="+datanya.getId_Suster()+"\">Data Seminar</a></li>\n"
-                        + "                        <li ><a href=\"./catatanPribadi_suster?id_suster="+datanya.getId_Suster()+"\">Catatan Pribadi</a></li>\n"      
+                        + "                        <li ><a href=\"./editDataBiaraView_?id_suster=" + datanya.getId_Suster() + "\">Data Biara</a></li>            "
+                        + "                        <li ><a href=\"./seminarYgPernahIkut_suster?id_suster=" + datanya.getId_Suster() + "\">Data Seminar</a></li>\n"
+                        + "                        <li ><a href=\"./catatanPribadi_suster?id_suster=" + datanya.getId_Suster() + "\">Catatan Pribadi</a></li>\n"
                         + "                    </ul>\n"
                         + "\n"
                         + "\n"
@@ -166,7 +167,7 @@ public class editSusterView_ extends HttpServlet {
                         + "                                <div class=\"form-group\">\n"
                         + "                                   <h4>NIK Suster</h4>\n <input type=\"text\"  class=\"form-control\" name=\"idSuster\" readonly value=\"" + datanya.getId_Suster() + "\">\n<h6>Untuk ganti foto klik dibawah ini</h6>\n"
                         + "                                    <div class=\"custom-file mb-3\">\n"
-                        + "                                        <input type=\"file\" class=\"custom-file-input\" id=\"fotoSuster\" name=\"fotoSuster\" required accept=\"image/*\"/>\n"
+                        + "                                        <input type=\"file\" class=\"custom-file-input\" id=\"fotoSuster\" name=\"fotoSuster\" accept=\"image/*\"/>\n"
                         + "                                        <label class=\"custom-file-label\" for=\"customFile\">FILE FOTO</label>\n"
                         + "                                    </div>\n"
                         + "                                </div><div class=\"form-group\">"
@@ -221,6 +222,13 @@ public class editSusterView_ extends HttpServlet {
                         + "                                    <div class=\"col-xs-6\">\n"
                         + "                                        <h4>Tanggal Lahir</h4>\n"
                         + "                                        <input type=\"date\" class=\"form-control\" required name=\"tanggal_lahir_suster\" value=\"" + datanya.getTanggal_lahir_suster() + "\">\n"
+                        + "                                    </div>\n"
+                        + "                                </div>\n"
+                        + ""
+                        + "                                <div class=\"form-group\">\n"
+                        + "                                    <div class=\"col-xs-6\">\n"
+                        + "                                        <h4>Motto Hidup</h4>\n"
+                        + "                                        <input type=\"text\" class=\"form-control\" required name=\"motto_suster\" value=\"" + mottoSuster + "\">\n"
                         + "                                    </div>\n"
                         + "                                </div>\n"
                         + "                                <div class=\"form-group\">\n"

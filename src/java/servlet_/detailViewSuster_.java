@@ -60,6 +60,7 @@ public class detailViewSuster_ extends HttpServlet {
         try {
             biodata_suster datanya = new biodata_suster();
             Connection conn = koneksi_db.initializeDatabase();
+            String motto="";
 
             PreparedStatement ps = conn.prepareStatement("SELECT * from biodata_suster WHERE id_suster=?");
             PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM minatbakat_suster WHERE id_suster=?");
@@ -87,6 +88,7 @@ public class detailViewSuster_ extends HttpServlet {
                 datanya.setAnak_ke(rs.getInt("anak_ke"));
                 datanya.setTempat_lahir_suster(rs.getString("tempat_lahir_suster"));
                 datanya.setTanggal_lahir_suster(rs.getString("tanggal_lahir_suster"));
+                motto=rs.getString("motto_suster");
 
             }
 
@@ -199,8 +201,8 @@ public class detailViewSuster_ extends HttpServlet {
                         + "        </div>\n"
                         + "        <!-- Begin 1st Row -->\n"
                         + "        <div class=\"entry\">\n"
-                        + "          <h2>OBJECTIVE</h2>\n"
-                        + "          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim viverra nibh sed varius. Proin bibendum nunc in sem ultrices posuere. Aliquam ut aliquam lacus.</p>\n"
+                        + "          <h2>MOTTO HIDUP</h2>\n"
+                        + "          <p>"+motto+"</p>\n"
                         + "        </div>\n"
                         + "        <!-- End 1st Row -->\n"
                         + "        <!-- Begin 2nd Row -->\n"
