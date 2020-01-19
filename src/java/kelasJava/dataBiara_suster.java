@@ -9,16 +9,33 @@ package kelasJava;
  *
  * @author ASUS
  */
-public class dataBiara_suster extends biodata_suster{
+public class dataBiara_suster extends biodata_suster {
+
     String id_suster;
-    private String tempat_baptis, tanggal_baptis, tempat_sakramen_krisma, 
-            tanggal_sakramen_krisma, tempat_komuni_pertama, 
-            tanggal_komuni_pertama, paroki_asal, ukuran_pakaian, 
-            tempat_kleding, tanggal_kleding, profes_pertama, 
-            tempat_pembaruan_pertama, tanggal_pembaruan_pertama, 
-            tempat_pembaruan_kedua, tanggal_pembaruan_kedua, 
-            tempat_pembaruan_ketiga, tanggal_pembaruan_ketiga, 
-            tempat_kaulkekal, tanggal_kaulkekal;
+    private String tempat_baptis, tanggal_baptis, tempat_sakramen_krisma,
+            tanggal_sakramen_krisma, tempat_komuni_pertama,
+            tanggal_komuni_pertama, paroki_asal, ukuran_pakaian,
+            tempat_kleding, tanggal_kleding, profes_pertama,
+            tempat_pembaruan_pertama, tanggal_pembaruan_pertama,
+            tempat_pembaruan_kedua, tanggal_pembaruan_kedua,
+            tempat_pembaruan_ketiga, tanggal_pembaruan_ketiga,
+            tempat_kaulkekal, tanggal_kaulkekal, tempat_aspiran, tempat_postulat;
+
+    public String getTempat_aspiran() {
+        return tempat_aspiran;
+    }
+
+    public void setTempat_aspiran(String tempat_aspiran) {
+        this.tempat_aspiran = tempat_aspiran;
+    }
+
+    public String getTempat_postulat() {
+        return tempat_postulat;
+    }
+
+    public void setTempat_postulat(String tempat_postulat) {
+        this.tempat_postulat = tempat_postulat;
+    }
 
     public String getId_suster() {
         return id_suster;
@@ -179,6 +196,5 @@ public class dataBiara_suster extends biodata_suster{
     public void setTanggal_kaulkekal(String tanggal_kaulkekal) {
         this.tanggal_kaulkekal = tanggal_kaulkekal;
     }
-    
-    
+
 }

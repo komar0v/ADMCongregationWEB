@@ -98,7 +98,7 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt3.executeUpdate();
             prpStmt3.close();
 
-            PreparedStatement prpStmt4=con.prepareStatement("INSERT INTO databiara_suster VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement prpStmt4=con.prepareStatement("INSERT INTO databiara_suster VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             prpStmt4.setString(1, suster.getId_Suster());
             prpStmt4.setString(2, "");
             prpStmt4.setString(3, "");
@@ -119,6 +119,8 @@ public class tambahSuster_ extends HttpServlet {
             prpStmt4.setString(18, "");
             prpStmt4.setString(19, "");
             prpStmt4.setString(20, "");
+            prpStmt4.setString(21, "");
+            prpStmt4.setString(22, "");
             prpStmt4.executeUpdate();
             prpStmt4.close();
             

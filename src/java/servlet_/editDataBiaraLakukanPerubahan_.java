@@ -72,10 +72,12 @@ public class editDataBiaraLakukanPerubahan_ extends HttpServlet {
         datanya.setTanggal_pembaruan_ketiga(request.getParameter("tanggalPembaruanKetiga"));
         datanya.setTempat_kaulkekal(request.getParameter("tempatKaulKekal"));
         datanya.setTanggal_kaulkekal(request.getParameter("tanggalKaulKekal"));
+        datanya.setTempat_aspiran(request.getParameter("tempat_aspiran"));
+        datanya.setTempat_postulat(request.getParameter("tempat_postulat"));
         //hehe
         try {
             Connection con = koneksi_db.initializeDatabase();
-            PreparedStatement prpStmt = con.prepareStatement("UPDATE databiara_suster SET tempat_baptis=?, tanggal_baptis=?, tempat_sakramen_krisma=?, tanggal_sakramen_krisma=?, tempat_komuni_pertama=?, tanggal_komuni_pertama=?, paroki_asal=?, ukuran_pakaian=?, tempat_kleding=?, tanggal_kleding=?, profes_pertama=?, tempat_pembaruan_pertama=?, tanggal_pembaruan_pertama=?, tempat_pembaruan_kedua=?, tanggal_pembaruan_kedua=?, tempat_pembaruan_ketiga=?, tanggal_pembaruan_ketiga=?, tempat_kaulkekal=?, tanggal_kaulkekal=? WHERE id_suster=?");
+            PreparedStatement prpStmt = con.prepareStatement("UPDATE databiara_suster SET tempat_baptis=?, tanggal_baptis=?, tempat_sakramen_krisma=?, tanggal_sakramen_krisma=?, tempat_komuni_pertama=?, tanggal_komuni_pertama=?, paroki_asal=?, ukuran_pakaian=?, tempat_kleding=?, tanggal_kleding=?, profes_pertama=?, tempat_pembaruan_pertama=?, tanggal_pembaruan_pertama=?, tempat_pembaruan_kedua=?, tanggal_pembaruan_kedua=?, tempat_pembaruan_ketiga=?, tanggal_pembaruan_ketiga=?, tempat_kaulkekal=?, tanggal_kaulkekal=?, tempat_aspiran=?, tempat_postulat=? WHERE id_suster=?");
             prpStmt.setString(1, datanya.getTempat_baptis());
             prpStmt.setString(2, datanya.getTanggal_baptis());
             prpStmt.setString(3, datanya.getTempat_sakramen_krisma());
@@ -95,7 +97,9 @@ public class editDataBiaraLakukanPerubahan_ extends HttpServlet {
             prpStmt.setString(17, datanya.getTanggal_pembaruan_ketiga());
             prpStmt.setString(18, datanya.getTempat_kaulkekal());
             prpStmt.setString(19, datanya.getTanggal_kaulkekal());
-            prpStmt.setString(20, datanya.getId_suster());
+            prpStmt.setString(20, datanya.getTempat_aspiran());
+            prpStmt.setString(21, datanya.getTempat_postulat());
+            prpStmt.setString(22, datanya.getId_suster());
             
             prpStmt.executeUpdate();
             prpStmt.close();
