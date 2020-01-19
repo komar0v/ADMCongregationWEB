@@ -73,7 +73,8 @@ public class editDataBiaraView_ extends HttpServlet {
                 datanya.setTanggal_pembaruan_ketiga(rs.getString("tanggal_pembaruan_ketiga"));
                 datanya.setTempat_kaulkekal(rs.getString("tempat_kaulkekal"));
                 datanya.setTanggal_kaulkekal(rs.getString("tanggal_kaulkekal"));
-
+                datanya.setTempat_aspiran(rs.getString("tempat_aspiran"));
+                datanya.setTempat_postulat(rs.getString("tempat_postulat"));
             }
             try {
                 out.println("\n"

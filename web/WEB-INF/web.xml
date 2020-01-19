@@ -47,6 +47,8 @@
         <url-pattern>/tambahRiwayatPendidikan_suster</url-pattern>
         <url-pattern>/tambahSeminarYgPernahIkut_suster</url-pattern>
         <url-pattern>/tambahSuster_</url-pattern>
+        <url-pattern>/ganti_fotoSuster</url-pattern>
+        <url-pattern>/ganti_fotoSuster_save</url-pattern>
         
         <url-pattern>/catPribadi_novis_satu_postulan_delapan</url-pattern>
         <url-pattern>/catPribadi_novis_satu_postulan_delapan_save</url-pattern>
