@@ -42,7 +42,6 @@ public class detailViewSuster_ extends HttpServlet {
 
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -186,7 +185,7 @@ public class detailViewSuster_ extends HttpServlet {
                         + "              <li style=\"font-size:16px\"> <img src=\"images/placeob.png\" style=\"width:20px;height:18px;\">   " + datanya.getTempat_lahir_suster() + "</li>\n"
                         + "              <li style=\"font-size:16px\"> <img src=\"images/dob.png\" style=\"width:20px;height:18px;\">   " + datanya.getTanggal_lahir_suster() + "</li>\n"
                         + "              <li style=\"font-size:16px\"> Nama Ayah : " + datanya.getNama_ayah_suster() + "</li>"
-                        + "              <li style=\"font-size:16px\"> Nama Ibu : " + datanya.getNama_ibu_suster() + "</li>"
+                        + "              <li style=\"font-size:16px\"><br> Nama Ibu : " + datanya.getNama_ibu_suster() + "</li>"
                         + "              </ul>\n"
                         + "          </div>\n"
                         + "          <!-- End Personal Information -->\n"
