@@ -19,7 +19,7 @@ public class koneksi_db {
 
         String dbName = "suster_adm";
         String dbUsername = "root";
-        String dbPassword = "";
+        String dbPassword = "UtnCWVIitB7x";
 
         Class.forName(dbDriver);
         Connection con = DriverManager.getConnection(dbURL + dbName, dbUsername, dbPassword);

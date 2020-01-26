@@ -69,11 +69,7 @@ public class editSusterLakukanPerubahan_ extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        InputStream inputStream;
-        Part filePart;
         biodata_suster suster = new biodata_suster();
-        filePart = request.getPart("fotoSuster");
-        inputStream = filePart.getInputStream();
 
         String idSust = request.getParameter("idSuster");
         suster.setId_Suster(idSust);
@@ -90,6 +86,7 @@ public class editSusterLakukanPerubahan_ extends HttpServlet {
         String jmlSaudara = request.getParameter("jmlh_saudara");
         int jml_saudara = Integer.parseInt(jmlSaudara);
         suster.setJmlh_saudara(jml_saudara);
+        String motto_ = request.getParameter("motto_suster");
 
         try {
             Connection con = koneksi_db.initializeDatabase();
@@ -103,7 +100,7 @@ public class editSusterLakukanPerubahan_ extends HttpServlet {
             prpStmt.setString(6, suster.getNama_ibu_suster());
             prpStmt.setInt(7, suster.getAnak_ke());
             prpStmt.setInt(8, suster.getJmlh_saudara());
-            prpStmt.setString(9, request.getParameter("motto_suster"));
+            prpStmt.setString(9, motto_);
             prpStmt.setString(10, suster.getId_Suster());
 
             prpStmt.executeUpdate();
