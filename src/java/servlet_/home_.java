@@ -352,7 +352,7 @@ public class home_ extends HttpServlet {
                     + "            <section>\n"
                     + "                <div class=\"\">\n"
                     + "                    <i class=\"\"></i>\n"
-                    + "                    <h5></h5>\n"
+                    + "                    <p>website sudah diupdate pada<br> 15 FEB 2020<br>&copy ADM</p>\n"
                     + "                </div>\n"
                     + "                <div >\n"
                     + "                    <span></span>\n"

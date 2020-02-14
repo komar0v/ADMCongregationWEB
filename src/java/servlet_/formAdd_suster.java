@@ -353,7 +353,7 @@ public class formAdd_suster extends HttpServlet {
                 + "                </div>\n"
                 + "                <h2 class=\"heading\"><b>BIODATA SUSTER</b></h2>\n"
                 + "                <div class=\"controls\">\n"
-                + "                    <input type=\"text\" id=\"idSuster\" class=\"floatLabel\" name=\"idSuster\" maxlength=\"17\" required>\n"
+                + "                    <input type=\"number\" id=\"idSuster\" class=\"floatLabel\" name=\"idSuster\" required>\n"
                 + "                    <label for=\"idSuster\">NIK Suster</label>\n"
                 + "                </div>\n"
                 + "                <div class=\"controls\">\n"
